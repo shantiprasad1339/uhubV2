@@ -1,0 +1,408 @@
+/* Base styles for larger screens */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* background-color: red; */
+    /* width: 100vw !important; */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: "Albert Sans", sans-serif;
+}
+
+.nav {
+    background-color: rgb(95, 95, 220);
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.navLogo img {
+    width: 100%;
+    max-width: 142px;
+    height: 55px;
+    margin-top: 5px;
+}
+
+marquee {
+    color: white;
+}
+
+.navsearch input {
+    width: 600px;
+    height: 30px;
+    flex-wrap: wrap;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    outline: none;
+    background: #fff;
+    padding-left: 15px;
+    margin-top: 5px;
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 5px 0px rgba(0, 0, 0, 0.50) inset; */
+}
+
+.navsearch input:focus {}
+
+.topNav {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+
+.inputDiv:hover {
+    border: 2px solid rgb(224, 115, 42) 2px solid;
+}
+
+.navIcons {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 550;
+}
+
+.login-button {
+    color: white;
+}
+
+.login-button:hover {
+    color: rgb(240, 98, 22);
+}
+
+/* .navText {
+    display: flex;
+} */
+
+.navText img {
+    width: 70px;
+    height: 25px;
+}
+
+.navsearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navsearch p {
+    color: #fff;
+    text-shadow: 0px 4px 4px #000;
+    /* font-family: Work Sans; */
+    font-size: 17px;
+    font-style: normal;
+    line-height: normal;
+    height: 2px;
+    flex-shrink: 0;
+}
+
+.navIn {
+    padding-left: 0px;
+    position: relative;
+}
+
+.searchIcon {
+    /* position: absolute; */
+    color: #ff0000;
+    background-color: #ffcf60;
+
+    /* background-color: aqua; */
+
+    font-size: 2.2rem !important;
+    height: 25px !important;
+}
+
+.navButtons button {
+    color: #fff;
+    /* font-family: Work Sans; */
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 80px;
+    height: 24px;
+    flex-shrink: 0;
+    padding-right: -10px !important;
+}
+
+.navButtons {
+    display: flex;
+    justify-content: flex-end;
+    /* gap: 20px; */
+    margin: -0px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+    font-size: 10px;
+}
+
+.dropButton:focus {
+    border: none;
+}
+
+.dropButton {
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    height: 30px !important;
+    margin-bottom: 3px !important;
+    width: 50px !important;
+    border-radius: 0px 5px 5px 0px;
+}
+.haburgerDiv{
+    color: white;
+    font-size: 18px !important;
+    
+}
+
+.navButtons1 button {
+    color: #FFF;
+    font-size: 15px !important;
+    background: transparent;
+    border: none;
+}
+
+.navButtons1{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 0px 20px ;
+    flex-wrap: wrap;
+}
+
+/* toggleButton.............. */
+
+
+
+text-primary{
+    color: #5a8dee!important;
+  }
+  .btn-primary {
+      border-color: #5a8dee !important;
+      background-color: #5a8dee !important;
+      color: #fff;
+  }
+  .shadow-md {
+      box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
+  }
+  .navbar{
+    border-radius: 5px;
+  }
+  .sidebar{
+      width: 280px;
+      min-height: 100vh;
+      box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      z-index: 1;
+      transition: 0.5s;
+  }
+  .sidebar.active{
+      left: 0;
+  }
+  .sd-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+  }
+  .sidebar-overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+  }
+  .sidebar-overlay.active{
+      opacity: 1;
+      visibility: visible;
+  }
+  .sd-body{
+      padding: 15px;
+      max-height: calc(100vh - 67px);
+      overflow-x: hidden;
+  }
+  .sd-body ul{
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0;
+  }
+  .sd-body ul li{
+      list-style: none;
+      margin-bottom: 8px;
+  }
+  .sd-body ul li .sd-link{
+      display: inline-block;
+      width: 100%;
+      padding: 10px 16px;
+      color: #475f7b;
+      background-color: #e5e8ec;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+
+
+
+
+
+
+
+/* Media query for tablet-sized screens */
+@media (max-width: 1024px) {
+    .navsearch input {
+        width: 170%;
+        max-width: 400px;
+    }
+
+    .inputDiv {
+        display: flex;
+    }
+
+    .navIcons img {
+        width: 100%;
+        max-width: 40px;
+        margin-top: 20px;
+    }
+
+    .navButtons button {
+        width: 60px;
+        font-size: 22px;
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 1023px) {
+    .nav {
+        /* flex-direction: row; */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navLogo img {
+        width: 100px;
+        height: 50px;          
+    }
+
+    .navsearch input {
+        width: 128%;
+        height: 25px;
+        max-width: 321px;
+    }
+
+    .navsearch {
+        /* display: block; */
+    }
+
+    .topNav {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .navIcons img {
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    .searchIcon {
+        /* position: absolute; */
+        color: #ff0000;
+        left: 67%;
+    }
+
+    .navButtons button {
+        width: 140px;
+        font-size: 20px;
+    }
+
+    .topNav {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navButtons button {
+        width: 140px;
+        font-size: 18px;
+    }
+
+    .navIcons {
+        margin-top: -20px;
+        font-size: 17px;
+        font-weight: 550;
+        display: flex;
+        justify-content: center;
+    }
+
+    .css-i4bv87-MuiSvgIcon-root {
+        height: 25px !important;
+        margin-bottom: 3px !important;
+        width: 45px !important;
+        border-radius: 0px 5px 5px 0px;
+        margin-top: 5px;
+
+    }
+}
+
+@media (max-width: 468px) {
+
+    .navButtons1{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px 0px 0px ;
+        flex-wrap: wrap;
+    }
+
+    .navButtons button {
+        width: 140px;
+        font-size: 15px;
+    }
+
+    
+    .cardArea {
+        margin-top: -80px;
+    }
+
+    .navsearch input {
+        width: 97%;
+        max-width: 300px;
+    }
+    .navsearch input {
+        width: 77%;
+        max-width: 300px;
+        font-size: 11px;
+
+        height: 18px;
+    }
+    .css-i4bv87-MuiSvgIcon-root {
+        height: 18px !important;
+        margin-bottom: 3px !important;
+        width: 38px !important;
+        border-radius: 0px 2px 2px 0px;
+        margin-top: 5px;
+
+    }
+    .navLogo img {
+        width: 75px;
+        height: 35px;
+        margin-top: -25px;
+    }
+    .navsearch input {
+        border-radius: 2px 0px 0px 2px;
+    }
+    .navIcons {
+        /* margin-top: 5px; */
+        font-size: 12px;
+        font-weight: 550;
+    }
+}

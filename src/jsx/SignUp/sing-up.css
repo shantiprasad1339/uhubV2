@@ -1,0 +1,39 @@
+.LogIninputs {
+  position: relative;
+  gap: 50px;
+
+}
+.otpText p{
+  display: flex;
+    width: 100%;
+    justify-content: end;
+    justify-self: flex-end;
+    padding-right: 22px;
+    padding-left: 10px;
+
+}
+.otpText {
+  width: 100%;
+  padding-bottom: -41px;
+  position: absolute;
+  top: 184px;
+  right: 29px;
+  display: flex;
+}
+@media only screen and (max-width:768px){
+  .otpText {
+    
+    top: 131px;
+    right: 17px;
+  
+}
+.LogIninputs input {
+  height: 46px;
+}
+}
+@media only screen and (max-width:430px){
+  .otpText {
+    top: 117px;
+    right: 0px;
+}
+}

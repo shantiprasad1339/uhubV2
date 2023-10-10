@@ -1,0 +1,190 @@
+.query-banner{
+    background-color:#348FD6;
+    padding:20px;
+    margin-top:30px;
+    border-radius:20px;
+    box-shadow:2px 2px 5px 5px rgb(238, 238, 238)
+}
+.qry-br-icon{
+width:40px;
+height:40px;
+}
+.info-box-sz{
+    background-color:white;
+    padding:5px;
+    border-radius: 20px;
+    width:350px;
+    margin-top:15px;
+}
+.info-dtl-fnt p{
+    font-size:15px;
+    font-weight:600;
+    letter-spacing: 0.75px;
+     color:rgb(54, 54, 54)
+}
+.info-dtl-fnt h6{
+    font-size:16px;
+    font-weight:600;
+    letter-spacing: 0.75px;
+     color:rgb(29, 28, 28);
+     margin-top:-10px
+}
+.quest-h6-tag{
+    font-size:15px;
+    font-weight:600;
+    color:white;
+    letter-spacing: 0.75px;
+}
+.quest-h4-tag{
+    font-size:25px;
+    font-weight:600;
+    color:white;
+    letter-spacing: 0.75px;
+}
+.banner-img-sz{
+    width:100%;
+    max-width:350px;
+    height:350px;
+}
+.banner-box-vw-sz{
+    margin-top:80px;
+}
+.bnr-img-box{
+    background-color:#2E81BC;
+    width:360px;
+    height:170px;
+    border-radius:80px;
+  transform: rotate(330deg);
+  margin-top:65px;
+  position: absolute;
+}
+.banner-img-box-vw{
+    position:relative;
+    margin-top:-290px;
+    margin-left:530px;
+}
+@media only screen and (max-width:767.98px){
+    .clm-dirt-vw{
+        flex-direction: column-reverse;
+     }
+     .banner-img-sz{
+        width:100%;
+        max-width:250px;
+        height:250px;
+    }
+    .quest-h6-tag{
+        font-size:14px;
+        font-weight:600;
+        color:white;
+        letter-spacing: 0.75px;
+        margin-top:13px;
+    }
+    .quest-h4-tag{
+        font-size:20px;
+        font-weight:600;
+        color:white;
+        letter-spacing: 0.75px;
+    } 
+    .banner-box-vw-sz{
+        margin-top:15px;
+    }
+    .info-dtl-fnt p{
+        font-size:14px;
+        font-weight:600;
+        letter-spacing: 0.75px;
+         color:rgb(54, 54, 54)
+    }
+    .info-dtl-fnt h6{
+        font-size:15px;
+        font-weight:600;
+        letter-spacing: 0.75px;
+         color:rgb(29, 28, 28);
+         margin-top:-10px
+    }
+    .qry-br-icon{
+        width:35px;
+        height:35px;
+        }
+        .bnr-img-box{
+            display:none;
+            background-color:#2E81BC;
+            width:360px;
+            height:170px;
+            border-radius:80px;
+          transform: rotate(330deg);
+          margin-top:65px;
+          position: absolute;
+        }
+        .banner-img-box-vw{
+            display:none;
+            position:relative;
+            margin-top:'-290px';
+            margin-left:'530px'
+        }
+        .info-box-sz{
+            background-color:white;
+            padding:5px;
+            border-radius: 20px;
+            width:100%;
+            margin-top:15px;
+        }
+        .query-banner{
+            background-color:#348FD6;
+            padding:6px;
+            margin-top:30px;
+            border-radius:20px;
+            box-shadow:2px 2px 5px 5px rgb(238, 238, 238)
+        }
+}
+
+@media only screen and (min-width:768px) and (max-width:1023.98px){
+    .bnr-img-box{
+        background-color:#2E81BC;
+        width:300px;
+        height:150px;
+        border-radius:80px;
+      transform: rotate(330deg);
+      margin-top:55px;
+      position: absolute;
+    }
+    .banner-img-box-vw{
+        position:relative;
+        margin-top:-290px;
+        margin-left:480px;
+    }
+    .info-dtl-fnt p{
+        font-size:14px;
+        font-weight:600;
+        letter-spacing: 0.75px;
+         color:rgb(54, 54, 54)
+    }
+    .info-dtl-fnt h6{
+        font-size:15px;
+        font-weight:600;
+        letter-spacing: 0.75px;
+         color:rgb(29, 28, 28);
+         margin-top:-10px
+    }
+    .qry-br-icon{
+        width:35px;
+        height:35px;
+        }
+        .quest-h6-tag{
+            font-size:14px;
+            font-weight:600;
+            color:white;
+            letter-spacing: 0.75px;
+            margin-top:13px;
+        }
+        .quest-h4-tag{
+            font-size:20px;
+            font-weight:600;
+            color:white;
+            letter-spacing: 0.75px;
+        } 
+        .banner-img-sz{
+            width:100%;
+            max-width:300px;
+            height:300px;
+        }
+}

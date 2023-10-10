@@ -1,0 +1,72 @@
+.contect-box{
+    width: 95%;
+    height: auto;
+    border-radius: 22px;
+    margin: auto;
+    background: #F8F8F8;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+    padding-bottom: 30px;
+    margin-top: 20px;
+}
+
+.contect-box:hover{
+    background: rgba(0,0,0,0.8);
+    color: white !important;
+} 
+
+.contect-head h3{
+    /* color: #000; */
+    font-family: Work Sans;
+    font-size: 30px;
+    font-style: normal;
+    /* font-weight: 400; */
+    line-height: normal;
+    padding: 20px;
+}
+
+.contect-content p{
+    /* color: #000; */
+    font-family: Work Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 20px;
+    margin-top: -40px;
+    word-break: break-all;
+}
+
+
+.btn-hover-content {
+    width: 250px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px 5px 50px 5px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    /* -webkit-transition: all .4s ease-in-out; */
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover-content:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+
+.btn-hover-content.color-1 {
+    background-image: linear-gradient(to right, #4669df,#110de4, #dd563f) ;
+    /* box-shadow: 0 4px 15px 0 rgba(13, 109, 106, 0.75); */
+}
+

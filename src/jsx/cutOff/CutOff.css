@@ -1,0 +1,135 @@
+.cutOf-thead {
+
+  /* padding-right: 200px; */
+  /* box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25); */
+  border-radius: 5px;
+  background: white;
+  height: 50px;
+  font-size: 25px;
+  width: 100vh;
+  
+  /* padding-bottom: 10px; */
+  text-align: left;
+  
+}
+.cutOf-table {
+  width: 95%;
+ 
+  border-radius: 22px;
+  background: #f8f8f8;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cutOf-table p{
+    padding: 20px;
+    color: #000;
+    font-family: Work Sans;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .cutOf-newsHead p{
+    color: #000;
+    font-family: Work Sans;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    padding-top: 50px;
+}
+/* 
+table {
+  width: 98%;
+  margin: auto;
+  height: 50px;
+} */
+.table-of-content{
+  width:95%;
+  border-collapse: collapse;
+}
+
+.cutOf-tcontent {
+  background: F8F8F8;
+  /* box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25); */
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  /* height: 50px;    */
+  margin-bottom: 1px;
+  
+}
+
+.cutOf-tcontent td {
+padding:10px;
+  border-right: solid 1px grey;
+  border-left: solid 1px grey;
+}
+.cutOf-thead th {
+  padding:5px;
+  border-right: solid 1px grey;
+  border-left: solid 1px grey;
+  font-size: 15px;
+}
+
+.cutOf-btn button{
+  border-radius: 25px;
+  background: #61A8F0;
+  box-shadow: 0px 4px 18px 0px rgba(97, 168, 240, 0.80);
+  color: #FFF;
+  font-family: Work Sans;
+  font-size: 30px;
+  font-weight: 400;
+  margin-left: 20px;
+  width: 250px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  margin: 20px 20px;
+}
+
+/* table, th, td {
+  border-right: 1px solid rgb(0, 0, 0);
+} */
+
+@media only screen and (max-width:767.98px){
+  .cutOf-thead {
+
+    /* padding-right: 200px; */
+    /* box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25); */
+    border-radius: 5px;
+    background: white;
+    height: 50px;
+    font-size: 16px;
+    width: 100vh;
+    
+    /* padding-bottom: 10px; */
+    text-align: left;
+    
+  }
+  .cutOf-tcontent td {
+    padding:10px;
+      border-right: solid 1px grey;
+      border-left: solid 1px grey;
+      font-size:15px;
+      font-weight:500;
+    }
+    .cutOf-tcontent {
+      background: F8F8F8;
+      /* box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25); */
+      border-radius: 5px;
+      font-size: 20px;
+      padding: 10px;
+     
+      /* height: 50px;    */
+      margin-bottom: 1px;
+      
+    }
+}

@@ -1,0 +1,19 @@
+.cot-icon-sz{
+    width:45px;
+    height:45px;
+}
+.cont-detl-fnt{
+    font-size:14px;
+    font-weight:600;
+    color:rgb(92, 92, 92);
+    letter-spacing: 0.75px;
+    text-align: center;
+    margin-top:3px;
+}
+.count-hd-fnt{
+    font-size:20px;
+    font-weight:600;
+    color:rgb(231, 1, 1);
+    margin-top:10px;
+    margin-left:10px;
+}

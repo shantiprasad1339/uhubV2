@@ -1,0 +1,14 @@
+@media only screen and (max-width: 430px)
+{
+.leftImg {
+    width: 244px;
+    margin-bottom: -147px;
+    margin-left: -1px;
+}
+}
+.LogIninputs {
+    position: relative;
+    gap: 21px;
+    margin-right: 20px;
+
+}

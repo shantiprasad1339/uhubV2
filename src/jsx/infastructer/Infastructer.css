@@ -1,0 +1,119 @@
+.info-img {
+  width: 95%;
+  /* height: 400px; */
+  border-radius: 30px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+}
+
+.info-heading p {
+  color: #000;
+  font-family: Work Sans;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 20px;
+  line-height: normal;
+}
+
+.info-img-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+ 
+}
+
+.info-video p {
+  color: #000;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  font-family: Work Sans;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.info-video img{
+    width: 20vh;
+    border-radius: 20px;
+}
+
+.info-club{
+    width: 95%;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 22px;
+    background: #F8F8F8;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.info-head-p{
+    color: #000;
+    font-family: Work Sans;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    padding: 30px 0px 50px 0px ;
+    /* padding-bottom: 50px; */
+    text-align: center;
+}
+
+.info-content{
+    display: flex;
+    color: #000;
+    font-family: Work Sans;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 20px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.info-btn button{
+    border-radius: 25px;
+    background: #61A8F0;
+    box-shadow: 0px 4px 18px 0px rgba(97, 168, 240, 0.80);
+    color: #FFF;
+    font-family: Work Sans;
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 20px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+   
+    /* padding: -30px; */
+}
+
+.info-btn {
+  text-align: center;
+}
+.newsHead p{
+    color: #000;
+    font-family: Work Sans;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    padding-top: 50px;
+}
+
+@media only screen and (max-width:767.98px){
+  .info-image {
+    padding: 10px;
+  }
+  
+}

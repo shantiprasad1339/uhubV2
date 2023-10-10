@@ -1,0 +1,165 @@
+.enroll-box-sz{
+    width:90%;
+    margin:auto;
+    background-color: white;
+    box-shadow:1px 1px 2px 2px rgb(235, 233, 233);
+    margin-top:25px;
+    margin-bottom:25px;
+    padding:15px;
+    border-radius: 10px;
+}
+.outerline-box{
+    border-radius: 20px;
+border: 5px solid #61A8F0;
+background: #FFF;
+}
+.enroll-img{
+    width:100%;
+    max-width: 1000px !important;
+    height:200px;
+}
+​
+/* .enroll-detail h5{
+    color: #000;
+    font-family: Work Sans;
+font-size: 25px !important;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.75px;
+margin-top:40px
+} */
+.enroll-detail-h5{
+    color: #be3030;
+    font-family: Work Sans;
+font-size: 20px !important; 
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.75px;
+margin-top:40px
+}
+/* .enroll-detail p {
+    color: #4d4c4c;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.75px;
+} */
+.enroll-detail-ptag{
+    color: #4d4c4c;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    margin-top:-10px;
+}
+/* .enroll-detail button{
+    border-radius: 10px;
+    background: #61A8F0;
+    box-shadow: 0px 4px 20px 0px rgba(97, 168, 240, 0.50);
+    font-size:16px;
+    font-weight:500;
+    letter-spacing: 0.75px;
+    border:solid 1px #61A8F0;
+    color:white;
+    padding: 10px 50px 10px 50px;
+} */
+.enroll-detail-btn{
+    border-radius: 10px;
+    background: #61A8F0;
+    box-shadow: 0px 4px 20px 0px rgba(97, 168, 240, 0.50);
+    font-size:16px;
+    font-weight:500;
+    letter-spacing: 0.75px;
+    border:solid 1px #61A8F0;
+    color:white;
+    padding: 10px 50px 10px 50px; 
+}
+.enroll-ovw-box{
+    display: flex;
+    justify-content: space-evenly;
+}
+@media only screen and (max-width:767.98px){
+    .enroll-ovw-box{
+        display: block;
+        justify-content: space-evenly;
+    }
+    .enroll-box-sz{
+        width:95%;
+        margin:auto;
+        background-color: white;
+        box-shadow:1px 1px 2px 2px rgb(235, 233, 233);
+        margin-top:25px;
+        margin-bottom:25px;
+        padding:10px;
+        border-radius: 10px;
+    }
+    .outerline-box{
+        border-radius: 20px;
+    border: 5px solid #61A8F0;
+    background: #FFF;
+    padding:10px;
+    }
+    .enroll-detail h5{
+        color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    margin-top:20px
+    }
+    .enroll-detail p {
+        color: #4d4c4c;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    }
+    .enroll-detail button{
+        border-radius: 10px;
+        background: #61A8F0;
+        box-shadow: 0px 4px 20px 0px rgba(97, 168, 240, 0.50);
+        font-size:16px;
+        font-weight:500;
+        letter-spacing: 0.75px;
+        border:solid 1px #61A8F0;
+        color:white;
+        padding: 5px 30px 5px 30px;
+        
+    }
+    .enroll-img{
+        width:100%;
+        max-width: 200px !important;
+        height:200px;
+    }
+}
+.enRollText{
+     color: #000;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    margin-top:20px;
+}
+.enRollText2{
+    color: #4d4c4c;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    margin-bottom: 40px;
+}
+.carouselDiv{}

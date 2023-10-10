@@ -1,0 +1,380 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    font-family: 'Albert Sans', sans-serif;
+
+}
+.topImg{
+    padding-top: 50px;
+}
+
+
+.topImg img{
+    width: 100%;
+}
+
+.UniversityBanner{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.TopAddress{}
+.UniversityLogo{
+    /* background-color: #865858; */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.UniversityRating{
+    display: flex;
+    justify-content: space-around;
+}
+.UniversityAddressDetails{
+    /* background-color: #040303; */
+  
+}
+
+.uniTopAdress{
+    /* background-color: #dcd2d2; */
+}
+.unibottomadd{
+    /* background-color: #948f8f; */
+    display: flex;
+    gap: 80px;
+   
+}
+.detailsButton{
+    width: 100%;
+/* height: 68px; */
+padding-bottom: 10px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #EAEAEA;
+box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.25);
+}
+.buttons button{
+    width: 174px;
+height: 50px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+border: none;
+outline: none;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* grid-template-columns: auto auto auto auto auto auto; */
+
+}
+.collegeSummery{
+    width: 100%;
+   max-width: 700px;
+height: auto;
+flex-shrink: 0;
+border-radius: 30px;
+border: 1px solid #000;
+margin-left: 20px;
+background: #FFF;
+padding: 10px;
+}
+.secondPtag{
+    width: 100%;
+height: auto;
+padding: 10px;
+flex-shrink: 0;
+border-radius: 15px;
+background: rgba(52, 143, 214, 0.30);
+}
+.rightNews{
+    width: 100%;
+    max-width: 458px;
+height: 327px;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center ;
+border-radius: 20px;
+padding: 10px;
+background: #FFF;
+box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20);
+}
+.banner-btn-1{
+    background: red;
+    border: none;
+    padding: 5px 30px;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+    background: #FA0000;
+    border-right: 1px solid white;
+    
+}
+
+.rightNewsHeading p{
+   
+height: 31px;
+flex-shrink: 0;
+color: #000;
+font-family: Work Sans;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.CollegeHero{
+    display: flex;
+    margin-top: 50px;
+justify-content: space-around;
+/* flex-direction: column; */
+}
+.rightNewsPtag{
+    width: 100%;
+    max-width: 393px;
+height: 65px;
+flex-shrink: 0;
+color: #000;
+text-align: center;
+font-family: Work Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.rightNewsButton button{
+    width: 324px;
+height: 38px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #0F1158;
+color: white;
+border: none;
+}
+.afterButtondetails{
+    width: 100%;
+text-align: center;
+margin-top: 20px;
+}
+.collegeExams{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+.SecndRightNewsbutton {
+    width: 100%;
+    max-width: 458px;
+    /* max-width: 220px; */
+    height: 23px;
+    flex-shrink: 0;
+    color: #FFF;
+    /* display: flex; */
+    text-align: center;
+font-family: Work Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.MainRightNews{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.SecndRightNewsbutton button {
+    width: 100%;
+    max-width: 350px;
+height: 40px;
+flex-shrink: 0;
+border-radius: 30px;
+font-size: 15px;
+background: #0F1158;
+color: white;
+border: none;
+}
+.SndRightNews{
+display: flex;
+flex-direction: column;
+gap: 50px;
+justify-content: center;
+align-items: center;
+border-radius: 20px;
+background: #FFF;
+box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+width: 100%;
+    max-width: 458px;
+height: 393px;
+flex-shrink: 0;
+padding: 10px;
+}
+.ApplyButton{
+    width: 138px;
+height: 37px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #FA0000;
+color: white;
+border: none;
+margin-left: 20px;
+}
+.active button{
+  
+  background-color: #2600ff;
+  color: #ffffff;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    border: 1px solid black;
+}
+.relatedNews{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+@media (max-width: 1024px) {
+    .buttons{
+        gap: 10px;
+    }
+    .rightNewsPtag {
+      
+        font-size: 15px;
+        padding-top: 18px;
+      
+    }
+    .banner-btn-1 {
+        background: red;
+        border: none;
+        padding: 4px 9px;
+        color: white;
+        border-radius: 10px 10px 10px 10px;
+        font-size: 20px;
+        background: #FA0000;
+        border-right: 1px solid white;
+    }
+    .unibottomadd {
+        /* background-color: #948f8f; */
+        display: flex;
+        gap: 17px;
+        margin-left: -42px;
+    }
+    
+    
+    
+}
+@media (max-width: 1024px) {
+    .CollegeHero {
+        display: flex;
+        margin-top: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        
+    }
+   
+}
+@media (max-width: 768px) {
+   
+    .banner-btn-1 {
+        background: red;
+        border: none;
+        padding: 0px 9px;
+        color: white;
+        border-radius: 10px 10px 10px 10px;
+        font-size: 8px;
+        background: #FA0000;
+        border-right: 1px solid white;
+    }
+    .uniLogo{
+        margin-left: -15px;
+    }
+    .buttons button {
+        width: 124px;}
+}
+@media (max-width: 430px) {
+   
+    .SndRightNews {
+        padding-left: 10px;
+    }
+    .SecndRightNewsbutton button {
+        margin-left: 10px;
+    }
+    .SecndRightNewsptag p{
+        text-align: center;
+    }
+    .collegeSummery{
+        width: 85% !important;
+        margin-left: 10px !important;
+    }
+    .uniTopAdress{
+        margin-left: 10px;
+
+    }
+    .UniversityBanner {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        height: 175px;
+        margin-top: 10px;
+        position: relative;
+    }
+    .universityLocation{
+        position: absolute;
+        top: 59px;
+        left: 129px;
+    }
+    .ratingCount{
+        position: absolute;
+    top: 113px;
+    left: 20px;
+}
+    .ratingNumber{
+        position: absolute;
+        top: 113px;
+        left: 85px;
+    }
+    .RatingStar{
+        position: absolute;
+        top: 108px;
+        left: 180px;
+    }
+    .brochureButton{
+        position: absolute;
+        top: 161px;
+        left: 80px;
+    }
+    .banner-btn-1 {
+        background: red;
+        border: none;
+        padding: 5px 17px;
+        color: white;
+        border-radius: 10px 10px 10px 10px;
+        font-size: 10px;
+        background: #FA0000;
+        border-right: 1px solid white;
+    }
+}
+
+@media (max-width: 380px) {
+    .RatingStar{
+       
+        left: 220px;
+    }
+    .ratingNumber{
+        
+        left: 120px;
+    }
+    .RatingStar {
+        left: 198px;
+        width: 39%;
+    } 
+}

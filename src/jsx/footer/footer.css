@@ -1,0 +1,233 @@
+.footer-bg{
+    background-color: #0b1141;
+    padding:30px;
+    color:white;
+}
+.footer-logo-sz{
+    width:100%;
+    max-width:150px;
+    height:80px;
+    object-fit: contain;
+}
+.footer-logo-box{
+    background-color: white;
+    padding:5px;
+    border-radius: 50%;
+    width:100%;
+    max-width:100px;
+    height:100px;
+  /* margin:auto; */
+}
+.footer-search-input{
+    position:relative;
+    height:60px;
+    border-radius:13px;
+    width:100%;
+}
+.footer-search-btn{
+    position: absolute;
+    margin-left:640px;
+    margin-top:-49px;
+    background-color:#d70000;
+    color:white;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border:1px solid #d70000;
+    border-radius:10px;
+    box-shadow:2px 2px 2px 2px #d70000;
+    font-size:16px;
+    font-weight:600;
+  
+}
+ul.footer-dtl-list{
+    list-style: none;
+    padding-left: 0px;
+}
+.footer-list{
+    color:white;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing: 0.80px;
+  
+}
+.footer-heading{
+    color:white;
+    font-size:20px;
+    font-weight:500;
+    letter-spacing: 0.80px;
+}
+.whatsapp-box{
+    background-color: white;
+    border-radius: 50%;
+    padding:5px;
+    position: fixed;
+    width:60px;
+    height:60px;
+    bottom: 20px;
+    left: 15px;
+    z-index: 10;
+    box-shadow:1px 1px 2px 2px rgb(220, 210, 255)
+}
+.whatsapp-icon-sz{
+    width:50px;
+    height:50px;
+}
+
+.chatbot-box{
+    background-color: white;
+    border-radius: 50%;
+    padding:5px;
+    position: fixed;
+    width:60px;
+    height:60px;
+    bottom: 20px;
+    right: 15px;
+    z-index: 10;
+    box-shadow:1px 1px 2px 2px rgb(220, 210, 255)
+}
+.chatbot-icon{
+    width:50px;
+    height:50px;
+}
+.footer-chat-box{
+    background-color: white;
+    box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 13px;
+    padding:10px;
+    width:100%;
+    max-width:500px ;
+   margin:auto;
+   
+}
+.chatbot-header{
+    background-color:#d70000;
+    color:white;
+    padding:10px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width:767.98px){
+    .footer-logo-sz{
+        width:100%;
+        max-width:100px;
+        height:50px;
+        object-fit: contain;
+       
+    }
+    .footer-logo-box{
+        background-color: white;
+        padding:0px;
+        border-radius: 50%;
+        width:100%;
+        max-width:80px;
+        height:80px;
+       padding-top:11px;
+       margin-top:10px
+    }
+    .footer-bg{
+        background-color: #0b1141;
+        padding:0px;
+        color:white;
+    }
+    .footer-search-input{
+        position:relative;
+        height:50px;
+        border-radius:13px;
+    }
+    .footer-search-btn{
+        position: absolute;
+        margin-left:150px;
+        margin-top:-38px;
+        background-color:#d70000;
+        color:white;
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:0px;
+        padding-bottom:0px;
+        border:1px solid #d70000;
+        border-radius:10px;
+        box-shadow:2px 2px 2px 2px #d70000;
+        font-size:15px;
+        font-weight:500;
+      
+    }
+    .whatsapp-box{
+        background-color: white;
+        border-radius: 50%;
+        padding:3px;
+        position: fixed;
+        width:50px;
+        height:50px;
+        bottom: 20px;
+        left: 15px;
+        z-index: 10;
+        box-shadow:1px 1px 2px 2px rgb(220, 210, 255)
+    }
+    .whatsapp-icon-sz{
+        width:45px;
+        height:45px;
+    }
+    
+    .chatbot-box{
+        background-color: white;
+        border-radius: 50%;
+        padding:3px;
+        position: fixed;
+        width:50px;
+        height:50px;
+        bottom: 20px;
+        right: 15px;
+        z-index: 10;
+        box-shadow:1px 1px 2px 2px rgb(220, 210, 255)
+    }
+    .chatbot-icon{
+        width:45px;
+        height:45px;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1023.98px){
+    .footer-bg{
+        background-color: #0b1141;
+        padding:10px;
+        color:white;
+    }
+    .footer-search-input{
+        position:relative;
+        height:50px;
+        border-radius:13px;
+    }
+    .footer-search-btn{
+        position: absolute;
+        margin-left:370px;
+        margin-top:-42px;
+        background-color:#d70000;
+        color:white;
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:3px;
+        padding-bottom:3px;
+        border:1px solid #d70000;
+        border-radius:10px;
+        box-shadow:2px 2px 2px 2px #d70000;
+        font-size:15px;
+        font-weight:500;
+      
+    }
+    .chatbot-box{
+        background-color: white;
+        border-radius: 50%;
+        padding:5px;
+        position: fixed;
+        width:60px;
+        height:60px;
+        bottom: 20px;
+        right: 15px;
+        z-index: 10;
+        box-shadow:1px 1px 2px 2px rgb(220, 210, 255)
+    }
+}

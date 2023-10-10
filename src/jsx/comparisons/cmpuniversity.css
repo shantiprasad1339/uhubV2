@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.compare-cd-box{
+    border-radius: 20px;
+    border:solid 2px #FA0000;
+    padding:10px;
+    margin-top:20px;
+    font-family: 'Albert Sans', sans-serif;
+
+}
+.college-lg-box{
+    display:flex;
+    justify-content: space-evenly;
+}
+.uni-logo-size{
+    width:100%;
+    max-width:85px;
+}
+.vs-fnt-vw{
+    font-size:25px;
+    font-weight:600;
+    font-family: 'Lobster', cursive;
+    background-color: black;
+    color:white;
+    width:50px;
+    text-align: center;
+    padding:10px;
+    border-radius: 50%;
+    margin-top:25px;
+}
+.cmp-line{
+    border-left: 2px solid rgb(75, 75, 75);
+    height: 170px;
+    margin:auto;
+}
+.compare-btn button{
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:8px;
+    padding-bottom:8px;
+    background-color: #FA0000;
+    color:white;
+    border-radius:13px;
+    border:solid 1px #FA0000;
+    font-size:16px;
+    font-weight:600;
+    align-items: center;
+    margin-top:17px;
+    width:100%;
+}
+
+@media (max-width: 780px){
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+}
