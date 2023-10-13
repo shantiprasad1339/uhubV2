@@ -2,6 +2,7 @@ body{
   font-family: 'Albert Sans', sans-serif;
 
 }
+
 .card2 {
   width: 250px;
   /* height: 380px; */
@@ -24,6 +25,7 @@ body{
 .card2-img {
   text-align: center;
 }
+
 
 .card2-head {
   color: #000;

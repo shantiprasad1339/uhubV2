@@ -22,6 +22,7 @@ dropdown-menu.show {
     height: auto !important;
   
 }
+
 .nav {
     background-color: rgb(95, 95, 220);
     display: flex;
@@ -100,6 +101,7 @@ marquee {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 5px;
 }
 
 .navsearch p {
@@ -378,23 +380,37 @@ text-primary{
 }
 
 @media (max-width: 468px) {
+    .navIcons {
+        margin-top: -32px;
+    }
+
+    .banner img {
+        height: 180px;
+    }
+    .dropdown-item {
+        font-size: 8px !important;
+    }
+    .dropdown-menu.show {
+        display: block;
+        min-width: 120px;
+    }
     .navButtons1 button {
         color: #FFF;
         font-size: 15px !important;
         background: transparent;
         border: none;
-        font-size: 18px !important;
+        font-size: 10px !important;
     }
     .navButtons1{
         display: flex;
         justify-content: space-between;
-        margin: 20px 0px 0px 0px ;
+        margin: 0px 0px 0px 0px ;
         flex-wrap: wrap;
     }
 
     .navButtons button {
         width: 140px;
-        font-size: 15px;
+        font-size: 8px;
     }
 
     
@@ -403,11 +419,7 @@ text-primary{
     }
 
     .navsearch input {
-        width: 97%;
-        max-width: 300px;
-    }
-    .navsearch input {
-        width: 77%;
+        width: 95%;
         max-width: 300px;
         font-size: 11px;
 
@@ -416,7 +428,7 @@ text-primary{
     .css-i4bv87-MuiSvgIcon-root {
         height: 18px !important;
         margin-bottom: 3px !important;
-        width: 38px !important;
+        width: 20px !important;
         border-radius: 0px 2px 2px 0px;
         margin-top: 5px;
 
@@ -433,5 +445,8 @@ text-primary{
         /* margin-top: 5px; */
         font-size: 12px;
         font-weight: 550;
+    }
+    .navsearch {
+        padding-top: 0px;
     }
 }
