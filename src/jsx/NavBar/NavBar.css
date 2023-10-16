@@ -124,6 +124,7 @@ marquee {
     /* position: absolute; */
     color: #ff0000;
     background-color: #ffcf60;
+    cursor: pointer;
 
     /* background-color: aqua; */
 
