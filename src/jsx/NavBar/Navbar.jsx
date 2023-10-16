@@ -31,7 +31,7 @@ function Navbar() {
             <div className="navInput">
               <div
                 className="inputDiv"
-                style={{ padding: "2px", borderRadius: "5px" }}
+                // style={{ padding: "2px", borderRadius: "5px" }}
               >
                 <input
                   type="text"

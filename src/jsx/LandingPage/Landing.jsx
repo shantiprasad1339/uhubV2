@@ -159,7 +159,7 @@ function Landing() {
 
         <div className="UniversityCards">
           {cardData
-            .slice(0, showAllCards ? undefined : 8)
+            .slice(0, showAllCards ? undefined : 12)
             .map((card, index) => (
               <NavLink to="/CollegeDetails" key={index}>
                 <UniCard img={card.img} text={card.text} />
@@ -215,11 +215,11 @@ function Card(props) {
         <div className="cardIcons">
           <div className="cardLocation">
             <LocationOnIcon />
-            <p>london</p>
+            <p>London</p>
           </div>
           <div className="cardStar">
             <StarIcon />
-            <p>rating</p>
+            <p>Rating</p>
           </div>
         </div>
       </div>
