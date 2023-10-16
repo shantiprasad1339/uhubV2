@@ -430,8 +430,8 @@ text-primary{
         margin-bottom: 3px !important;
         width: 20px !important;
         border-radius: 0px 2px 2px 0px;
-        margin-top: 5px;
-
+        /* margin-top: 1px !important; */
+margin-left: -5px !important;
     }
     .navLogo img {
         width: 75px;
