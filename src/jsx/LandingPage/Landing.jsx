@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Landing.css";
 import Navbar from "../NavBar/Navbar";
 import { NavLink } from "react-router-dom";
@@ -17,6 +17,7 @@ import StarIcon from "@mui/icons-material/Star";
 import newsimage from "../../../public/Images/newsImage.png";
 import CollegeDetails from "../collegeDetails/CollegeDetails";
 import AllNewPages from "../AllNewPages/AllNewPages";
+import axios from "axios";
 function Landing() {
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
@@ -127,6 +128,18 @@ function Landing() {
   const toggleNews = () => {
     setShowAllNews(!showAllNews);
   };
+  useEffect(()=>{
+    BannerGet()
+  })
+  
+  function BannerGet(){
+    return(
+
+      // axios.get('').then((res)=>{})
+      console.log('working')
+    )
+  }
+
   return (
     <>
       <div className="heroSaction">
