@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./CollegeDetails.css";
 import Navbar from "../NavBar/Navbar";
@@ -25,10 +25,13 @@ import Content from "../content/content";
 import Placement from "../placement/placement";
 import CutOff from "../cutOff/CutOff";
 import Infra from "../infastructer/Infastructer";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 function CollegeDetails() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <Navbar />
@@ -70,7 +73,7 @@ function TopImgUniversity() {
             </div> */}
 
             <div className="uniTopAdress">
-              <h3>UNIVERSITY OF BIRMINGHAM</h3>
+              <h4>UNIVERSITY OF BIRMINGHAM</h4>
             </div>
             <div className="unibottomadd">
               <div className="universityLocation">
@@ -223,8 +226,8 @@ function UniversityDetailsButton() {
     <>
       <div className="detailsButton">
         <div className="buttons">
-        <NavLink to="/CollegeDetails">
-          <button>Overview</button>
+          <NavLink to="/CollegeDetails">
+            <button>Overview</button>
           </NavLink>
 
           <NavLink to="/Course">
