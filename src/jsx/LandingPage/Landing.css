@@ -4,17 +4,19 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    
+
     font-family: 'Albert Sans', sans-serif;
 
 }
-a{
+
+a {
     text-decoration: none;
     color: #000;
 }
+
 /* Base styles for cards */
-.banner img{
-   max-height: 500px;
+.banner img {
+    max-height: 500px;
     width: 100%;
     padding-bottom: 30px;
 }
@@ -41,7 +43,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   
+
     gap: 30px;
     margin-top: -70px;
 }
@@ -59,9 +61,10 @@ a{
 }
 
 
-.cardImg img{
+.cardImg img {
     height: 100px;
 }
+
 .cardLocation,
 .cardStar p {
     font-size: 10px;
@@ -161,10 +164,20 @@ a{
 .UniversityCard {
     width: 200px;
     height: 238px;
-    flex-shrink: 0;
+    position: relative;
     border-radius: 22px;
     background: #EEE;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.the-card{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s case;
+    background: #03446A;
+    border-radius: 15px;
 }
 
 .UniversityCards {
@@ -198,7 +211,7 @@ a{
     text-shadow: 0px 4px 10px rgba(15, 17, 88, 0.50);
     /* font-family: Work Sans; */
     /* font-size: 45px; */
-    
+
     font-style: normal;
     font-weight: 400;
     margin-left: 10px;
@@ -215,54 +228,142 @@ a{
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
     margin-left: 10px;
 }
+
 .news:hover {
     border: 1px solid #FA0000;
 
 }
+
 .newsDate {
     line-height: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 14px;
+}
+
+.newsDate-date{
+    margin-right:15px;
+    /* border: 1px solid black; */
+    padding: 5px;
+    background: #606061;
+    color: white;
+    border-radius: 5px;
+}
+
+.newsDate-date:hover{
+    background-color: #9ec8e9;
 }
 
 .headingNews {
     margin-bottom: 5px;
 }
 
+.headingNews-h {
+    font-size: 18px;
+    margin-top: 5px;
+}
 
-.viewAllBtn{
+.headingNews-p{
+    font-size: 12px;
+    padding: 0px 15px 0px 5px;
+    word-break: break-all;
+}
+
+.newsDate-name{
+    font-style: italic;
+}
+
+.viewAllBtn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.viewAllBtn button{
+
+
+/* FLIPCARD CSS */
+
+.clg-card {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: -150px;
+    float: left;
+    perspective: 500px;
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-right: 20px !important;
+  }
+  
+  .clg-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .clg-card:hover .clg-content {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    line-height: 300px;
+    color: #03446A;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    background: #03446A;
+    color: white;
+    transform: rotateY( 180deg );
+  } 
+
+/* FLIPCARD CSS END */
+.viewAllBtn button {
     width: 300px;
-height: 64px;
-margin-top: 30px;
-flex-shrink: 0;
-color: #ffffff;
-border-radius: 10px;
-background: #0F1158;
-box-shadow: 0px 4px 20px 5px rgba(52, 143, 214, 0.50);
+    height: 64px;
+    margin-top: 30px;
+    flex-shrink: 0;
+    color: #ffffff;
+    border-radius: 10px;
+    background: #0F1158;
+    box-shadow: 0px 4px 20px 5px rgba(52, 143, 214, 0.50);
 }
+
 .NewsCard {
     display: grid;
     row-gap: 20px;
     justify-content: space-evenly;
     grid-template-columns: auto auto;
 }
+
 .cardIcons {
-    gap:40px;
+    gap: 40px;
 }
-.latesText{
-    display:flex;
-    justify-content:center;
+
+.latesText {
+    display: flex;
+    justify-content: center;
 }
+
 /* Media query for mobile screens */
 @media (max-width: 1040px) {
     .css-i4bv87-MuiSvgIcon-root {
-       
+
         margin-top: 5px;
-       
+
     }
+
     .UniversityCards {
         display: grid;
         grid-template-columns: auto auto auto;
@@ -270,46 +371,53 @@ box-shadow: 0px 4px 20px 5px rgba(52, 143, 214, 0.50);
         justify-content: space-evenly;
         width: 100%;
         margin-top: 60px;
-    
+
     }
+
     .heroImg p {
         top: 165px;
         left: 53px;
     }
+
     .heroImg img {
         max-width: 90%;
         max-height: 100%;
         cursor: pointer;
         margin-top: 190px;
     }
-    .NewsCard{
+
+    .NewsCard {
         display: grid;
-       
+
     }
-    .news{
-        width: 480px;
+
+    .news {
+        width: 550px;
     }
+
     .NewsCard {
         display: grid;
         row-gap: 20px;
         justify-content: space-evenly;
-        grid-template-columns:auto auto ;}
+        grid-template-columns: auto auto;
     }
-    .card {
-        width: 22%;
-        max-width: 220px;
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 10px;
-        align-items: center;
-        text-align: left;
-        font-size: 14px;
-    }
+}
+
+.card {
+    width: 22%;
+    max-width: 220px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    text-align: left;
+    font-size: 14px;
+}
 
 @media (max-width: 780px) {
-    
+
     .card {
         width: 25%;
         max-width: none;
@@ -321,27 +429,35 @@ box-shadow: 0px 4px 20px 5px rgba(52, 143, 214, 0.50);
         padding: 20px;
         text-align: left;
         font-size: 14px;
-        
+
     }
+
     .cardArea {
-       
+
         margin-top: -40px;
     }
+
     .navButtons button {
         width: 155px;
         font-size: 20px;
-    }.NewsCard{
+    }
+
+    .NewsCard {
         display: grid;
-        grid-template-columns:auto  ;}
+        grid-template-columns: auto;
+    }
+
     .card:hover {
         animation: none;
         /* Remove hover animation on mobile */
     }
+
     .heroText h4 {
-       
+
         padding-left: 10px;
-      
+
     }
+
     .cardArea {
         gap: 20px;
     }
@@ -371,137 +487,162 @@ box-shadow: 0px 4px 20px 5px rgba(52, 143, 214, 0.50);
         top: 190px;
         left: 10px;
     }
+
     .cardIcons {
         gap: 40px;
     }
-    .UniversityCard{
+
+    .UniversityCard {
         width: 230px;
     }
 }
+
 @media (max-width: 760px) {
-   .cardArea{
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-   }
-   
-   .heroImg p {
-    top: 165px;
-    left: 10px;
+    .cardArea {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .heroImg p {
+        top: 165px;
+        left: 10px;
+    }
+
+    .UniversityCards {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .NewsCard {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto;
+        width: 100%;
+    }
+
+    .heroText h4 {
+        font-size: 26px;
+    }
+
+    .latesText h4 {
+        font-size: 32px;
+    }
+
+    .news {
+        flex-direction: column;
+        width: 290px;
+    }
+
+    .newsDate h4 {
+        font-size: 15px;
+        padding-left: 10px;
+    }
+
+    .NewsCard {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto;
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .newImg {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsImg img {
+        width: 265px;
+        height: 171px;
+    }
+
+    .headingNews {
+        padding: 10px;
+    }
+
+    .UniversityCards {
+        gap: 10px;
+    }
+
+    .UniversityCard {
+        width: 190px;
+    }
 }
-.UniversityCards{
-    display:grid ;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-.NewsCard {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: auto;
-    width: 100%;
-}
-.heroText h4 {
-    font-size: 26px;
-}
-.latesText h4 {
-    font-size: 32px;
-}
-.news{
-    flex-direction: column;
-    width: 290px;
-}
-.newsDate h4{
-    font-size: 15px;
-    padding-left: 10px;
-}
-.NewsCard {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: auto;
-    width: 100%;
-    margin-top: 70px;
-}
-.newImg{
-    width: 100%;
-    text-align: center;
-}
-.newsImg img{
-    width: 265px;
-    height: 171px;
-}
-.headingNews{
-    padding: 10px;
-}
-.UniversityCards{
-    gap: 10px;
-}
-.UniversityCard{
-    width: 190px;
-}
-}
+
 @media (max-width: 490px) {
     .cardImg img {
         height: 100px;
         margin-top: 20px;
     }
-    .card{
+
+    .card {
         width: 208px !important;
         height: 244px !important;
     }
+
     .cardText h4 {
         /* font-size: 13px; */
     }
+
     .cardArea {
         gap: 6px;
     }
+
     .cardText h4 {
-        
+
         margin-top: 0px;
     }
+
     .cardIcons {
         justify-content: flex-start;
         margin-top: -3px;
     }
+
     .latesText h4 {
         font-size: 26px;
     }
 }
+
 @media (max-width: 768px) {
-    .card{
+    .card {
         width: 200px !important;
         height: 210px !important;
     }
-    .cardText h4 {
-        }
+
+    .cardText h4 {}
+
     .cardText h4 {
         font-size: 16px;
         margin-top: -1px;
         margin-bottom: 4px;
     }
 }
+
 @media (max-width: 390px) {
-    .navIcons{
+    .navIcons {
         /* display: none; */
         font-size: 10px;
         margin-top: -34px;
     }
-   
-    .UniversityCard{
+
+    .UniversityCard {
         width: 151px;
     }
+
     .cardArea {
 
-    grid-template-columns: auto ;
+        grid-template-columns: auto;
     }
+
     .latesText h4 {
         font-size: 26px;
     }
 }
-
-

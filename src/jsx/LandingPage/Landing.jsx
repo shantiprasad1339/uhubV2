@@ -45,79 +45,89 @@ function Landing() {
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
     {
       image: newsimage,
       heading: "JNU CUET UG Application Correction Window to Close on May 31",
       summary:
         "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "Argha Das May 27, 2022",
+      date: "May 27, 2022",
+      name: "Argha Das",
     },
-    
   ];
 
   const toggleCards = () => {
@@ -178,22 +188,21 @@ function Landing() {
           <h4>Latest News & Papers</h4>
         </div>
         <div className="NewsCard">
-        {newsData.slice(0, showAllNews ? undefined : 5).map((news, index) => (
-          <NavLink to="/AllNewPages" key={index}>
+          {newsData.slice(0, showAllNews ? undefined : 5).map((news, index) => (
             <Newscard
               image={news.image}
               heading={news.heading}
               summary={news.summary}
               date={news.date}
+              name={news.name}
             />
-          </NavLink>
-        ))}
-      </div>
-      <div className="viewAllBtn">
-        <button onClick={toggleNews}>
-          {showAllNews ? "View Less Updates" : "View All Updates"}
-        </button>
-      </div>
+          ))}
+        </div>
+        <div className="viewAllBtn">
+          <button onClick={toggleNews}>
+            {showAllNews ? "View Less Updates" : "View All Updates"}
+          </button>
+        </div>
       </div>
     </>
   );
@@ -231,13 +240,22 @@ export { Card };
 function UniCard(props) {
   return (
     <>
-      <div className="unicard">
+      {/* <div className="unicard">
         <div className="UniversityCard">
           <div className="universityimg">
             <img src={props.img} alt="" />
             <h4>{props.text}</h4>
             <p>6077 College</p>
           </div>
+        </div>
+      </div> */}
+
+      <div className="unicard">
+        <div className="UniversityCard">
+          <div className="the-card">
+            
+          </div>
+
         </div>
       </div>
     </>
@@ -253,10 +271,11 @@ function Newscard(props) {
           <img src={props.image} alt="" />
         </div>
         <div className="headingNews">
-          <h6>{props.heading}</h6>
-          <p>{props.summerry}</p>
+          <h6 className="headingNews-h">{props.heading}</h6>
+          <p className="headingNews-p">{props.summary}</p>
           <div className="newsDate">
-            <h4>{props.date}</h4>
+            <p className="newsDate-name">{props.name}</p>
+            <p className="newsDate-date">{props.date}</p>
           </div>
         </div>
       </div>
