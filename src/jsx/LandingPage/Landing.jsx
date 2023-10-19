@@ -18,7 +18,10 @@ import newsimage from "../../../public/Images/newsImage.png";
 import CollegeDetails from "../collegeDetails/CollegeDetails";
 import AllNewPages from "../AllNewPages/AllNewPages";
 import axios from "axios";
+import ReactFlipCard from 'reactjs-flip-card'
+
 function Landing() {
+  const [bannerImg,setBannerImg] = useState([])
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
 
@@ -145,16 +148,37 @@ function Landing() {
   function BannerGet(){
     return(
 
-      // axios.get('').then((res)=>{})
-      console.log('working')
+      axios.get('https://hammerhead-app-p3s8r.ondigitalocean.app/banner/get').then((res)=>{
+        console.log(url + res.data.data[1].image);
+      })
+     
     )
   }
-
+const url = 'https://hammerhead-app-p3s8r.ondigitalocean.app/';
   return (
     <>
       <div className="heroSaction">
         <div className="banner">
-          <img src={banner} alt="" />
+          {/* <img src={banner} alt="" /> */}
+          <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+  <div className="carousel-inner">
+    
+    {bannerImg.map((item,index)=>{
+      <div className="carousel-item">
+      <img className="d-block w-100" src={url + item.image} alt="Third slide"/>
+    </div>
+    })}
+    
+  </div>
+  <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="sr-only">Previous</span>
+  </a>
+  <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="sr-only">Next</span>
+  </a>
+</div>
         </div>
         <div className="cardArea">
           <Card image={logo} university={"University Of oxford"} />
@@ -182,12 +206,14 @@ function Landing() {
 
         <div className="UniversityCards">
           {cardData
-            .slice(0, showAllCards ? undefined : 12)
+            .slice(0, showAllCards ? undefined : 5)
             .map((card, index) => (
               <NavLink to="/CollegeDetails" key={index}>
                 <UniCard img={card.img} text={card.text} />
               </NavLink>
             ))}
+
+{/* <UniCard img={Maintenance} text={'Engineering'} /> */}
         </div>
 
         <div className="seeMoreBtn">
@@ -251,26 +277,39 @@ function Card(props) {
 export { Card };
 
 function UniCard(props) {
+  const styles = {
+    card: {},
+}
   return (
     <>
-      {/* <div className="unicard">
-        <div className="UniversityCard">
-          <div className="universityimg">
-            <img src={props.img} alt="" />
-            <h4>{props.text}</h4>
-            <p>6077 College</p>
+     
+     <div className="unicard">
+            <div className="UniversityCard">
+              <div className="universityimg">
+                <img src={props.img} alt="" />
+                <h4>{props.text}</h4>
+                <p>6077 College</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div> */}
-
-      <div className="unicard">
+           <div className="unicard">
+            <div className="UniversityCard">
+              <div className="universityimg">
+                <img src={props.img} alt="" />
+                <h4>{props.text}</h4>
+                <p>6077 College</p>
+              </div>
+            </div>
+          </div>
+      
+      {/* <div className="unicard">
         <div className="UniversityCard">
           <div className="the-card">
             
           </div>
 
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

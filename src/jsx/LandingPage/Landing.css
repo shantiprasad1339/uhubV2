@@ -646,3 +646,9 @@ a {
         font-size: 26px;
     }
 }
+:where(.ReactFlipCard__flipCardFront) {
+    position: static !important;
+}
+:where(.ReactFlipCard__flipCardBack) {
+    position: static !important;
+}
