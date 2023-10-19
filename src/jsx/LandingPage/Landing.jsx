@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import Navbar from "../NavBar/Navbar";
 import { NavLink } from "react-router-dom";
@@ -18,10 +18,10 @@ import newsimage from "../../../public/Images/newsImage.png";
 import CollegeDetails from "../collegeDetails/CollegeDetails";
 import AllNewPages from "../AllNewPages/AllNewPages";
 import axios from "axios";
-import ReactFlipCard from 'reactjs-flip-card'
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 function Landing() {
-  const [bannerImg,setBannerImg] = useState([])
+  const [bannerImg, setBannerImg] = useState([]);
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
 
@@ -141,44 +141,64 @@ function Landing() {
   const toggleNews = () => {
     setShowAllNews(!showAllNews);
   };
-  useEffect(()=>{
-    BannerGet()
-  })
-  
-  function BannerGet(){
-    return(
+  useEffect(() => {
+    BannerGet();
+  }, []);
 
-      axios.get('https://hammerhead-app-p3s8r.ondigitalocean.app/banner/get').then((res)=>{
-        console.log(url + res.data.data[1].image);
-      })
-     
-    )
+  function BannerGet() {
+    return axios
+      .get("https://hammerhead-app-p3s8r.ondigitalocean.app/banner/get")
+      .then((res) => {
+        // console.log( res.data.data);
+        setBannerImg(res.data.data);
+      });
   }
-const url = 'https://hammerhead-app-p3s8r.ondigitalocean.app/';
+  const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
+  // console.log(bannerImg);
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <>
       <div className="heroSaction">
         <div className="banner">
-          {/* <img src={banner} alt="" /> */}
-          <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-  <div className="carousel-inner">
-    
-    {bannerImg.map((item,index)=>{
-      <div className="carousel-item">
-      <img className="d-block w-100" src={url + item.image} alt="Third slide"/>
-    </div>
-    })}
-    
-  </div>
-  <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="sr-only">Previous</span>
-  </a>
-  <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="sr-only">Next</span>
-  </a>
-</div>
+          <Carousel
+            responsive={responsive}
+            autoPlay={true}
+            swipeable={true}
+            draggable={true}
+            showDots={true}
+            infinite={true}
+            partialVisible={false}
+            dotListClass="custom-dot-list-style"
+          >
+            {bannerImg.map((item, index) => {
+              return (
+                <>
+                  <div key={index}>
+                    <img src={url + item.image} alt="" />{" "}
+                  </div>
+                </>
+              );
+            })}
+          </Carousel>
         </div>
         <div className="cardArea">
           <Card image={logo} university={"University Of oxford"} />
@@ -213,7 +233,7 @@ const url = 'https://hammerhead-app-p3s8r.ondigitalocean.app/';
               </NavLink>
             ))}
 
-{/* <UniCard img={Maintenance} text={'Engineering'} /> */}
+          {/* <UniCard img={Maintenance} text={'Engineering'} /> */}
         </div>
 
         <div className="seeMoreBtn">
@@ -279,29 +299,28 @@ export { Card };
 function UniCard(props) {
   const styles = {
     card: {},
-}
+  };
   return (
     <>
-     
-     <div className="unicard">
-            <div className="UniversityCard">
-              <div className="universityimg">
-                <img src={props.img} alt="" />
-                <h4>{props.text}</h4>
-                <p>6077 College</p>
-              </div>
-            </div>
+      <div className="unicard">
+        <div className="UniversityCard">
+          <div className="universityimg">
+            <img src={props.img} alt="" />
+            <h4>{props.text}</h4>
+            <p>6077 College</p>
           </div>
-           <div className="unicard">
-            <div className="UniversityCard">
-              <div className="universityimg">
-                <img src={props.img} alt="" />
-                <h4>{props.text}</h4>
-                <p>6077 College</p>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div className="unicard">
+        <div className="UniversityCard">
+          <div className="universityimg">
+            <img src={props.img} alt="" />
+            <h4>{props.text}</h4>
+            <p>6077 College</p>
           </div>
-      
+        </div>
+      </div>
+
       {/* <div className="unicard">
         <div className="UniversityCard">
           <div className="the-card">
