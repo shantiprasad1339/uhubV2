@@ -171,18 +171,23 @@ function Landing() {
         </div>
         <div className="NewsCard">
           {newsDataArray.slice(0, showAllNews ? undefined : 5).map((news, index) =>{
-            console.log(news);
+            // console.log(news);
+            function truncateText(text, maxLength) {
+              if (text.length <= maxLength) {
+                return text;
+              } else {
+                // Use slice to get the first 'maxLength' words and add "..."
+                const truncatedText = text.split(" ").slice(0, 25).join(" ") + "...";
+                return truncatedText;
+              }
+            }
             return (
-            <Newscard
-              image={url+news.image}
-              heading={news.Description
-              }
-              summary={news.SecondDescription
-              }
-              date={news.date
-              }
-              name={news.who_upload
-              }
+              <Newscard
+              image={url + news.image}
+              heading={news.Description}
+              summary={truncateText(news.SecondDescription, 50)}  // Adjust '50' to your desired word limit
+              date={news.date}
+              name={news.who_upload}
             />
           )})}
         </div>

@@ -28,13 +28,24 @@ const LatestNews = () => {
   useEffect(() => {
     newsGet();
   }, []);
+
+  function truncateText(text, maxLength) {
+    if (text.length <= maxLength) {
+      return text;
+    } else {
+    
+      const truncatedText = text.split(" ").slice(0, 40).join(" ") + "...";
+      return truncatedText;
+    }
+  }
+
   const items = latestNews.map((item, index) => (
     <div style={{ margin: "8px" }}>
       <CollegeCard
-        title={item.Description}
-        image={url + item.image}
-        detail={item.SecondDescription}
-      />
+  title={item.Description}
+  image={url + item.image}
+  detail={truncateText(item.SecondDescription, 50)}
+/>
     </div>
   ));
   return (
