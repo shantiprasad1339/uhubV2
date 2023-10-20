@@ -45,6 +45,7 @@ function Landing() {
     { img: Maintenance, text: "Engineering" },
     { img: Maintenance, text: "Engineering" },
   ];
+  
 
   const toggleCards = () => {
     setShowAllCards(!showAllCards);
@@ -157,10 +158,8 @@ function Landing() {
 
         <div className="UniversityCards">
           {universties
-            // .slice(0, showAllCards ? undefined : 5)
-            .map((card, index) =>{
-              // console.log(url+card.image);
-              return(
+            .slice(0, showAllCards ? undefined : 5)
+            .map((card, index) => (
               <NavLink to="/CollegeDetails" key={index}>
                 <UniCard img={url+card.image} text={card.name} address={card.shortaddress} description={card.Description}/>
               </NavLink>
@@ -250,6 +249,15 @@ function UniCard(props) {
   };
   return (
     <>
+      {/* <div className="unicard">
+        <div className="UniversityCard">
+          <div className="universityimg">
+            <img src={props.img} alt="" />
+            <h4>{props.text}</h4>
+            <p>6077 College</p>
+          </div>
+        </div>
+      </div>
       <div className="unicard">
         <div className="UniversityCard">
           <div className="universityimg">
@@ -259,16 +267,31 @@ function UniCard(props) {
           </div>
         </div>
       </div>
-      
 
       {/* <div className="unicard">
         <div className="UniversityCard">
-          <div className="the-card">
-            
-          </div>
+         
 
         </div>
       </div> */}
+      <div className="unicard">
+        <div class="maincontainer">
+          <div class="thecard">
+            <div class="thefront">
+              <img src={props.img} alt="" />
+              <h4>{props.text}</h4>
+              <p>6077 College</p>
+            </div>
+            <div class="theback">
+              <p className="theback-p1">Description</p>
+              <p className="theback-p2">
+              simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
@@ -279,7 +302,7 @@ function Newscard(props) {
     <>
       <div className="news">
         <div className="newsImg">
-          <img src={props.image} alt="" />
+          <img src={props.image} alt="Image" />
         </div>
         <div className="headingNews">
           <h6 className="headingNews-h">{props.heading}</h6>
