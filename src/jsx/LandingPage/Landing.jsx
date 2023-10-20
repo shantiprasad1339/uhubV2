@@ -23,7 +23,7 @@ import "react-multi-carousel/lib/styles.css";
 function Landing() {
   const [bannerImg, setBannerImg] = useState([]);
   const [newsDataArray, setnewsData] = useState([]);
-
+  const [universties, setUniversities] = useState([]);
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
 
@@ -45,7 +45,6 @@ function Landing() {
     { img: Maintenance, text: "Engineering" },
     { img: Maintenance, text: "Engineering" },
   ];
-  
 
   const toggleCards = () => {
     setShowAllCards(!showAllCards);
@@ -57,6 +56,7 @@ function Landing() {
   useEffect(() => {
     BannerGet();
     NewsGet();
+    universtyGet();
   }, []);
 
   function BannerGet() {
@@ -73,6 +73,14 @@ function Landing() {
       .then((res) => {
         // console.log( res.data.data);
         setnewsData(res.data.data[0]);
+      });
+  }
+  function universtyGet() {
+    return axios
+      .get("https://hammerhead-app-p3s8r.ondigitalocean.app/university/gets")
+      .then((res) => {
+        console.log(res.data.data);
+        setUniversities(res.data.data);
       });
   }
   const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
@@ -97,7 +105,7 @@ function Landing() {
       items: 1,
     },
   };
-  
+
   return (
     <>
       <div className="heroSaction">
@@ -148,13 +156,15 @@ function Landing() {
         </div> */}
 
         <div className="UniversityCards">
-          {cardData
-            .slice(0, showAllCards ? undefined : 5)
-            .map((card, index) => (
+          {universties
+            // .slice(0, showAllCards ? undefined : 5)
+            .map((card, index) =>{
+              // console.log(url+card.image);
+              return(
               <NavLink to="/CollegeDetails" key={index}>
-                <UniCard img={card.img} text={card.text} />
+                <UniCard img={url+card.image} text={card.name} address={card.shortaddress} description={card.Description}/>
               </NavLink>
-            ))}
+            )})}
 
           {/* <UniCard img={Maintenance} text={'Engineering'} /> */}
         </div>
@@ -170,26 +180,30 @@ function Landing() {
           <h4>Latest News & Papers</h4>
         </div>
         <div className="NewsCard">
-          {newsDataArray.slice(0, showAllNews ? undefined : 5).map((news, index) =>{
-            // console.log(news);
-            function truncateText(text, maxLength) {
-              if (text.length <= maxLength) {
-                return text;
-              } else {
-                // Use slice to get the first 'maxLength' words and add "..."
-                const truncatedText = text.split(" ").slice(0, 25).join(" ") + "...";
-                return truncatedText;
+          {newsDataArray
+            .slice(0, showAllNews ? undefined : 5)
+            .map((news, index) => {
+              // console.log(news);
+              function truncateText(text, maxLength) {
+                if (text.length <= maxLength) {
+                  return text;
+                } else {
+                  // Use slice to get the first 'maxLength' words and add "..."
+                  const truncatedText =
+                    text.split(" ").slice(0, 25).join(" ") + "...";
+                  return truncatedText;
+                }
               }
-            }
-            return (
-              <Newscard
-              image={url + news.image}
-              heading={news.Description}
-              summary={truncateText(news.SecondDescription, 50)}  // Adjust '50' to your desired word limit
-              date={news.date}
-              name={news.who_upload}
-            />
-          )})}
+              return (
+                <Newscard
+                  image={url + news.image}
+                  heading={news.Description}
+                  summary={truncateText(news.SecondDescription, 50)} // Adjust '50' to your desired word limit
+                  date={news.date}
+                  name={news.who_upload}
+                />
+              );
+            })}
         </div>
         <div className="viewAllBtn">
           <button onClick={toggleNews}>
@@ -245,15 +259,7 @@ function UniCard(props) {
           </div>
         </div>
       </div>
-      <div className="unicard">
-        <div className="UniversityCard">
-          <div className="universityimg">
-            <img src={props.img} alt="" />
-            <h4>{props.text}</h4>
-            <p>6077 College</p>
-          </div>
-        </div>
-      </div>
+      
 
       {/* <div className="unicard">
         <div className="UniversityCard">
