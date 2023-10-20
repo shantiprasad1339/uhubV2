@@ -179,9 +179,10 @@ function Landing() {
               }
               summary={news.SecondDescription
               }
-              date={news.updatedAt
+              date={news.date
               }
-              name={news.sada}
+              name={news.who_upload
+              }
             />
           )})}
         </div>
