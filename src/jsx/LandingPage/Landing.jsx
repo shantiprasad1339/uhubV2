@@ -45,7 +45,6 @@ function Landing() {
     { img: Maintenance, text: "Engineering" },
     { img: Maintenance, text: "Engineering" },
   ];
-  
 
   const toggleCards = () => {
     setShowAllCards(!showAllCards);
@@ -97,7 +96,7 @@ function Landing() {
       items: 1,
     },
   };
-  
+
   return (
     <>
       <div className="heroSaction">
@@ -170,21 +169,30 @@ function Landing() {
           <h4>Latest News & Papers</h4>
         </div>
         <div className="NewsCard">
-          {newsDataArray.slice(0, showAllNews ? undefined : 6).map((news, index) =>{
-            console.log(news);
-            return (
-            <Newscard
-              image={url+news.image}
-              heading={news.Description
+          {newsDataArray
+            .slice(0, showAllNews ? undefined : 5)
+            .map((news, index) => {
+              // console.log(news);
+              function truncateText(text, maxLength) {
+                if (text.length <= maxLength) {
+                  return text;
+                } else {
+                  // Use slice to get the first 'maxLength' words and add "..."
+                  const truncatedText =
+                    text.split(" ").slice(0, 25).join(" ") + "...";
+                  return truncatedText;
+                }
               }
-              summary={news.SecondDescription
-              }
-              date={news.date
-              }
-              name={news.who_upload
-              }
-            />
-          )})}
+              return (
+                <Newscard
+                  image={url + news.image}
+                  heading={news.Description}
+                  summary={truncateText(news.SecondDescription, 50)} // Adjust '50' to your desired word limit
+                  date={news.date}
+                  name={news.who_upload}
+                />
+              );
+            })}
         </div>
         <div className="viewAllBtn">
           <button onClick={toggleNews}>
@@ -231,7 +239,7 @@ function UniCard(props) {
   };
   return (
     <>
-      <div className="unicard">
+      {/* <div className="unicard">
         <div className="UniversityCard">
           <div className="universityimg">
             <img src={props.img} alt="" />
@@ -239,17 +247,32 @@ function UniCard(props) {
             <p>6077 College</p>
           </div>
         </div>
-      </div>
-    
+      </div> */}
 
       {/* <div className="unicard">
         <div className="UniversityCard">
-          <div className="the-card">
-            
-          </div>
+         
 
         </div>
       </div> */}
+      <div className="unicard">
+        <div class="maincontainer">
+          <div class="thecard">
+            <div class="thefront">
+              <img src={props.img} alt="" />
+              <h4>{props.text}</h4>
+              <p>6077 College</p>
+            </div>
+            <div class="theback">
+              <p className="theback-p1">Description</p>
+              <p className="theback-p2">
+              simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
