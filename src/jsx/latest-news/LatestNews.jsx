@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./latestnews.css";
 import { CollegeCard } from "../recommand-college/RecommandCollege";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import universityimg from "../../assets/images/universityimg.png";
+import axios from "axios";
 
 const responsive = {
   0: { items: 1 },
@@ -12,34 +13,30 @@ const responsive = {
   1024: { items: 4 },
   1500: { items: 4 },
 };
-const items = [
-  <div style={{margin:'8px'}}><CollegeCard
-    title="Oxford"
-    image={universityimg}
-    detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, perspiciatis!"
-  /></div>,
-  <div style={{margin:'8px'}}><CollegeCard
-    title="Hull"
-    image={universityimg}
-    detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, perspiciatis!"
-  /></div>,
-  <div style={{margin:'8px'}}><CollegeCard
-    title="Mainchester"
-    image={universityimg}
-    detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, perspiciatis!"
-  /></div>,
-  <div style={{margin:'8px'}}><CollegeCard
-    title="Oxford"
-    image={universityimg}
-    detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, perspiciatis!"
-  /></div>,
- <div style={{margin:'8px'}}><CollegeCard
-    title="Hull"
-    image={universityimg}
-    detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, perspiciatis!"
-  /></div> ,
-];
+
 const LatestNews = () => {
+  const [latestNews, setLatestNews] = useState([]);
+  function newsGet() {
+    return axios
+      .get("https://hammerhead-app-p3s8r.ondigitalocean.app/vlog/get")
+      .then((res) => {
+        console.log(res.data.data);
+        setLatestNews(res.data.data[0]);
+      });
+  }
+  const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
+  useEffect(() => {
+    newsGet();
+  }, []);
+  const items = latestNews.map((item, index) => (
+    <div style={{ margin: "8px" }}>
+      <CollegeCard
+        title={item.Description}
+        image={url + item.image}
+        detail={item.SecondDescription}
+      />
+    </div>
+  ));
   return (
     <>
       <div className="container-fluid">
