@@ -34,7 +34,9 @@
   position: absolute;
   bottom: 78px;
 }
-
+.heading h1{
+  font-size: 4rem;
+}
 .leftDiv h1{
 width: 100%;
 max-width: 350px;
@@ -42,6 +44,8 @@ max-width: 350px;
 .leftDiv h3{
   width: 100%;
 max-width: 500px;
+margin-left: 5rem;
+
 }
 .heading{
   display: flex;
@@ -103,13 +107,22 @@ flex-shrink: 0;
 border-radius: 10px;
 background: rgba(152, 121, 18, 0.80);
 }
-
+.LogIninputs h6 {
+  color: black;
+  position: absolute;
+  bottom: 22px;
+}
 @media only screen and (max-width:768px){
   .LogIninputs button {
     width: 100%;
     max-width: 258px;
     height: 40px;
    
+  }
+  .leftDiv h3{
+   
+  margin-left: 3rem !important;
+  
   }
   .LogIninputs {
     width: 100%;

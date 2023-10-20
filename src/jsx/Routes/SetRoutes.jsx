@@ -26,34 +26,26 @@ import Content from '../content/content'
 const SetRoutes = () => {
     return (
         <>
- <Routes>
- <Route path='/' element={<Home />} /> 
- <Route path='/recommandedcollege' element={<RecommandCollege />} /> 
- <Route path='/trendinguniversity' element={<TrendingUniversity />} /> 
- <Route path='/ResultPage' element={<ResultPage />} /> 
- <Route path='/media' element={<Media />} /> 
- <Route path='/latestnews' element={<LatestNews />} />
- <Route path='/AllNewPages' element={<AllNewPages />} />
- <Route path='/CollegeDetails' element={<CollegeDetails />} />
- <Route path='/enrollbox' element={<EnrollBox />} />
- <Route path='/collegelocation' element={<CollegeLocation />} />
- <Route path='/highlights' element={<Highlights />} />
- <Route path='/signUp' element={<SignUp />} />
- <Route path='/logIn' element={<LogIn />} />
- <Route path='/OtpPage' element={<OtpPage />} />
- <Route path='/CutOff' element={<CutOff />} />
- <Route path='/Content' element={<Content />} />
- <Route path='/Course' element={<Course />} />
- <Route path='/Placement' element={<Placement />} />
- <Route path='/ResultPage' element={<ResultPage />} />
+            <Routes>
+                <Route path='/' element={<LogIn />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='/AllNewPages' element={<AllNewPages />} />
+                <Route path='/CollegeDetails' element={<CollegeDetails />} />
+                <Route path='/signUp' element={<SignUp />} />
+                <Route path='/OtpPage' element={<OtpPage />} />
+                <Route path='/CutOff' element={<CutOff />} />
+                <Route path='/Content' element={<Content />} />
+                <Route path='/Course' element={<Course />} />
+                <Route path='/Placement' element={<Placement />} />
+                <Route path='/ResultPage' element={<ResultPage />} />
 
- <Route path='/Infra' element={<Infra />} />
+                <Route path='/Infra' element={<Infra />} />
 
 
- 
 
 
- </Routes>
+
+            </Routes>
 
         </>
     );

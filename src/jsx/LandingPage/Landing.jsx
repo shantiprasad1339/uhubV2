@@ -22,6 +22,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 function Landing() {
   const [bannerImg, setBannerImg] = useState([]);
+  const [newsDataArray, setnewsData] = useState([]);
+
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
 
@@ -43,96 +45,7 @@ function Landing() {
     { img: Maintenance, text: "Engineering" },
     { img: Maintenance, text: "Engineering" },
   ];
-  const newsData = [
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-    {
-      image: newsimage,
-      heading: "JNU CUET UG Application Correction Window to Close on May 31",
-      summary:
-        "In order to make correction in the JNU CUET UG application form, candidates need to visit the official website of CUET:",
-      date: "May 27, 2022",
-      name: "Argha Das",
-    },
-  ];
+  
 
   const toggleCards = () => {
     setShowAllCards(!showAllCards);
@@ -143,6 +56,7 @@ function Landing() {
   };
   useEffect(() => {
     BannerGet();
+    NewsGet();
   }, []);
 
   function BannerGet() {
@@ -151,6 +65,14 @@ function Landing() {
       .then((res) => {
         // console.log( res.data.data);
         setBannerImg(res.data.data);
+      });
+  }
+  function NewsGet() {
+    return axios
+      .get("https://hammerhead-app-p3s8r.ondigitalocean.app/vlog/get")
+      .then((res) => {
+        // console.log( res.data.data);
+        setnewsData(res.data.data[0]);
       });
   }
   const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
@@ -168,13 +90,14 @@ function Landing() {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
   };
+  
   return (
     <>
       <div className="heroSaction">
@@ -247,15 +170,20 @@ function Landing() {
           <h4>Latest News & Papers</h4>
         </div>
         <div className="NewsCard">
-          {newsData.slice(0, showAllNews ? undefined : 5).map((news, index) => (
+          {newsDataArray.slice(0, showAllNews ? undefined : 5).map((news, index) =>{
+            console.log(news);
+            return (
             <Newscard
-              image={news.image}
-              heading={news.heading}
-              summary={news.summary}
-              date={news.date}
-              name={news.name}
+              image={url+news.image}
+              heading={news.Description
+              }
+              summary={news.SecondDescription
+              }
+              date={news.updatedAt
+              }
+              name={news.sada}
             />
-          ))}
+          )})}
         </div>
         <div className="viewAllBtn">
           <button onClick={toggleNews}>

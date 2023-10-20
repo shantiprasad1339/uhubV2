@@ -415,7 +415,18 @@ a {
     text-align: left;
     font-size: 14px;
 }
-
+.newsImg img {
+    width: 200px;
+    height: 171px;
+}
+@media (max-width: 1023px) {
+    .css-i4bv87-MuiSvgIcon-root {
+        height: 25px !important;
+        margin-bottom: 3px !important;
+        width: 20px !important;
+        border-radius: 0px 5px 5px 0px;
+    }
+}
 @media (max-width: 780px) {
 
     .card {
