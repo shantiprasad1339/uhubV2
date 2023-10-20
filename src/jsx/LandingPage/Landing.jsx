@@ -23,7 +23,7 @@ import "react-multi-carousel/lib/styles.css";
 function Landing() {
   const [bannerImg, setBannerImg] = useState([]);
   const [newsDataArray, setnewsData] = useState([]);
-
+  const [universties, setUniversities] = useState([]);
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
 
@@ -56,6 +56,7 @@ function Landing() {
   useEffect(() => {
     BannerGet();
     NewsGet();
+    universtyGet()
   }, []);
 
   function BannerGet() {
@@ -64,6 +65,14 @@ function Landing() {
       .then((res) => {
         // console.log( res.data.data);
         setBannerImg(res.data.data);
+      });
+  }
+  function universtyGet() {
+    return axios
+      .get("https://hammerhead-app-p3s8r.ondigitalocean.app/university/gets")
+      .then((res) => {
+        console.log(res.data.data);
+        setUniversities(res.data.data);
       });
   }
   function NewsGet() {
@@ -147,11 +156,13 @@ function Landing() {
         </div> */}
 
         <div className="UniversityCards">
-          {cardData
+          {universties
             .slice(0, showAllCards ? undefined : 6)
             .map((card, index) => (
               <NavLink to="/CollegeDetails" key={index}>
-                <UniCard img={card.img} text={card.text} />
+                <UniCard img={url+card.image} text={card.name} address={card.shortaddress} description={card.Description}/>
+
+
               </NavLink>
             ))}
 
@@ -266,8 +277,7 @@ function UniCard(props) {
             <div class="theback">
               <p className="theback-p1">Description</p>
               <p className="theback-p2">
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
+              {props.description}
               </p>
             </div>
           </div>
