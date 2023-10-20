@@ -149,7 +149,7 @@ function Landing() {
 
         <div className="UniversityCards">
           {cardData
-            .slice(0, showAllCards ? undefined : 5)
+            .slice(0, showAllCards ? undefined : 6)
             .map((card, index) => (
               <NavLink to="/CollegeDetails" key={index}>
                 <UniCard img={card.img} text={card.text} />
@@ -170,7 +170,7 @@ function Landing() {
           <h4>Latest News & Papers</h4>
         </div>
         <div className="NewsCard">
-          {newsDataArray.slice(0, showAllNews ? undefined : 5).map((news, index) =>{
+          {newsDataArray.slice(0, showAllNews ? undefined : 6).map((news, index) =>{
             console.log(news);
             return (
             <Newscard
@@ -240,15 +240,7 @@ function UniCard(props) {
           </div>
         </div>
       </div>
-      <div className="unicard">
-        <div className="UniversityCard">
-          <div className="universityimg">
-            <img src={props.img} alt="" />
-            <h4>{props.text}</h4>
-            <p>6077 College</p>
-          </div>
-        </div>
-      </div>
+    
 
       {/* <div className="unicard">
         <div className="UniversityCard">
@@ -268,7 +260,7 @@ function Newscard(props) {
     <>
       <div className="news">
         <div className="newsImg">
-          <img src={props.image} alt="" />
+          <img src={props.image} alt="Image" />
         </div>
         <div className="headingNews">
           <h6 className="headingNews-h">{props.heading}</h6>
