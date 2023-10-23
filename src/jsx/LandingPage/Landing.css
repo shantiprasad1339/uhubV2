@@ -28,7 +28,7 @@ a {
     border-radius: 10px;
     background: #F1BBBB;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-    width: 100%;
+    width: 80%;
     max-width: 121px;
     height: 213px;
     flex-shrink: 0;
@@ -41,11 +41,7 @@ a {
 
 .cardArea {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-
-    gap: 30px;
-    margin-top: -70px;
 }
 
 .cardText h4 {
@@ -170,8 +166,8 @@ a {
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-.the-card{
-    position:absolute;
+.the-card {
+    position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
@@ -204,21 +200,23 @@ a {
     background: #EEE;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25) inset;
 }
+
 .thecard {
     position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.5s ease;
+    transition: all 1.5s ease;
     background: #eee;
     border-radius: 22px;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-.thecard:hover{
+.thecard:hover {
     transform: rotatey(180deg);
-    
+
 }
+
 .thefront {
     display: flex;
     justify-content: center;
@@ -235,6 +233,7 @@ a {
     border-radius: 22px;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25) inset;
 }
+
 .theback {
     position: absolute;
     width: 100%;
@@ -248,7 +247,8 @@ a {
     padding: 10px 10px 10px 10px;
 
 }
-.theback-p1{
+
+.theback-p1 {
     text-align: center;
     padding-top: 5px;
     font-size: 20px;
@@ -257,22 +257,24 @@ a {
     text-decoration: underline;
 }
 
-.theback-p2{
+.theback-p2 {
     word-break: break-all;
-    
+
 }
 
 
 
 /* card */
-.thefront img{
+.thefront img {
     border-radius: 20px;
     height: 100px;
 }
-.thefront h4{
+
+.thefront h4 {
     word-break: break-all;
     margin: 5px;
 }
+
 .universityimg {
     height: 100px;
     display: flex;
@@ -327,8 +329,8 @@ a {
     font-family: 14px;
 }
 
-.newsDate-date{
-    margin-right:15px;
+.newsDate-date {
+    margin-right: 15px;
     /* border: 1px solid black; */
     padding: 5px;
     background: #606061;
@@ -336,7 +338,7 @@ a {
     border-radius: 5px;
 }
 
-.newsDate-date:hover{
+.newsDate-date:hover {
     background-color: #9ec8e9;
 }
 
@@ -350,13 +352,13 @@ a {
     margin-top: 5px;
 }
 
-.headingNews-p{
+.headingNews-p {
     font-size: 12px;
     padding: 0px 15px 0px 5px;
     word-break: break-all;
 }
 
-.newsDate-name{
+.newsDate-name {
     font-style: italic;
 }
 
@@ -442,7 +444,7 @@ a {
 }
 
 .card {
-    width: 22%;
+    width: 60%;
     max-width: 220px;
     height: auto;
     flex-direction: column;
@@ -453,12 +455,14 @@ a {
     text-align: left;
     font-size: 14px;
 }
+
 .newsImg img {
     width: 150px;
     height: 150px;
     padding: 10px;
     border-radius: 30px;
 }
+
 @media (max-width: 1023px) {
     .css-i4bv87-MuiSvgIcon-root {
         height: 25px !important;
@@ -467,6 +471,7 @@ a {
         border-radius: 0px 5px 5px 0px;
     }
 }
+
 @media (max-width: 780px) {
 
     .card {
@@ -483,10 +488,6 @@ a {
 
     }
 
-    .cardArea {
-
-        margin-top: -40px;
-    }
 
     .navButtons button {
         width: 155px;
@@ -639,9 +640,7 @@ a {
         height: 244px !important;
     }
 
-    .cardText h4 {
-        /* font-size: 13px; */
-    }
+
 
     .cardArea {
         gap: 6px;
@@ -656,7 +655,7 @@ a {
         justify-content: flex-start;
         margin-top: -3px;
     }
-
+     
     .latesText h4 {
         font-size: 26px;
     }
@@ -697,9 +696,11 @@ a {
         font-size: 26px;
     }
 }
+
 :where(.ReactFlipCard__flipCardFront) {
     position: static !important;
 }
+
 :where(.ReactFlipCard__flipCardBack) {
     position: static !important;
 }
