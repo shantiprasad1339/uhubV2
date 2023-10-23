@@ -25,7 +25,7 @@ function Landing() {
   const [universties, setUniversities] = useState([]);
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
-  
+
   const toggleCards = () => {
     setShowAllCards(!showAllCards);
   };
@@ -127,7 +127,7 @@ function Landing() {
             })}
           </Carousel>
         </div>
-        
+
         <Carousel
           responsive={responsive}
           autoPlay={true}
@@ -138,14 +138,13 @@ function Landing() {
           partialVisible={false}
           dotListClass="custom-dot-list-style"
         >
-         
           {universties
             .slice(0, showAllCards ? undefined : 6)
             .map((card, index) => (
               <div className="cardArea">
-              <Card image={url + card.image} university={card.name} />
-            </div>))}
-          
+                <Card image={url + card.image} university={card.name} />
+              </div>
+            ))}
         </Carousel>
         <div className="heroBox">
           <div className="heroImg">
@@ -214,7 +213,7 @@ function Landing() {
               );
             })}
         </div>
-        <div className="viewAllBtn">      
+        <div className="viewAllBtn">
           <button onClick={toggleNews}>
             {showAllNews ? "View Less Updates" : "View All Updates"}
           </button>
@@ -256,26 +255,14 @@ function UniCard(props) {
     if (text.length <= maxLength) {
       return text;
     } else {
-      const truncatedText = text.split(" ").slice(0, maxLength).join(" ") + "...";
+      const truncatedText =
+        text.split(" ").slice(0, maxLength).join(" ") + "...";
       return truncatedText;
     }
   }
-  
+
   return (
     <>
-      {/* <div className="unicard">
-        <div className="UniversityCard">
-          <div className="universityimg">
-            <img src={props.img} alt="" />
-            <h4>{props.text}</h4>
-            <p>6077 College</p>
-          </div>
-        </div>
-      </div> */}
-      {/* <div className="unicard">
-        <div className="UniversityCard">
-        </div>
-      </div> */}
       <div className="unicard">
         <div class="maincontainer">
           <div class="thecard">
@@ -286,8 +273,9 @@ function UniCard(props) {
             </div>
             <div class="theback">
               <p className="theback-p1">Description</p>
-              <p className="theback-p2">    {truncateText(props.description, 20)}
-</p>
+              <p className="theback-p2">
+                {truncateText(props.description, 20)}
+              </p>
             </div>
           </div>
         </div>
@@ -297,7 +285,6 @@ function UniCard(props) {
 }
 export { UniCard };
 function Newscard(props) {
-  
   return (
     <>
       <div className="news">

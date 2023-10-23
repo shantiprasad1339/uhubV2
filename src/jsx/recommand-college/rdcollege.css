@@ -15,6 +15,9 @@ body{
     margin-top:15px;
     border-radius:20px;
     padding:2px;
+    /* width: 350px; */
+    justify-content: center;
+    /* height: 300px; */
   
 }
 .university-img{
@@ -22,6 +25,7 @@ body{
     width:100%;
     max-width: 500px;
     height:150px;
+    padding: 5px;
     object-fit:cover;
 }
 .uni-content{

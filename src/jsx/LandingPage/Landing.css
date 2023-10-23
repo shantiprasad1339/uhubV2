@@ -58,7 +58,9 @@ a {
 
 
 .cardImg img {
-    height: 100px;
+    height: 110px;
+    border-radius: 15px;
+    padding-bottom: 10px;
 }
 
 .cardLocation,
