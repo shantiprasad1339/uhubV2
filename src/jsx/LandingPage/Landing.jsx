@@ -56,7 +56,7 @@ function Landing() {
   useEffect(() => {
     BannerGet();
     NewsGet();
-    universtyGet()
+    universtyGet();
   }, []);
 
   function BannerGet() {
@@ -86,7 +86,7 @@ function Landing() {
   const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
   // console.log(bannerImg);
 
-  const responsive = {
+  const responsive1 = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
@@ -105,17 +105,35 @@ function Landing() {
       items: 1,
     },
   };
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 2000 },
+      items: 7,
+    },
+    desktop: {
+      breakpoint: { max: 2000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 764 },
+      items: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
     <>
       <div className="heroSaction">
         <div className="banner">
           <Carousel
-            responsive={responsive}
+            responsive={responsive1}
             autoPlay={true}
             swipeable={true}
             draggable={true}
-            showDots={true}
+            // showDots={true}
             infinite={true}
             partialVisible={false}
             dotListClass="custom-dot-list-style"
@@ -131,13 +149,35 @@ function Landing() {
             })}
           </Carousel>
         </div>
-        <div className="cardArea">
-          <Card image={logo} university={"University Of oxford"} />
-          <Card image={logo2} university={"University of Hertfordshire"} />
+        
+        <Carousel
+          responsive={responsive}
+          autoPlay={true}
+          swipeable={true}
+          draggable={true}
+          // showDots={true}
+          infinite={true}
+          partialVisible={false}
+          dotListClass="custom-dot-list-style"
+        >
+          <div className="cardArea">
+            <Card image={logo} university={"University Of oxford"} />
+          </div>
+          <div className="cardArea">
+            <Card image={logo2} university={"University of Hertfordshire"} />
+          </div>
+          <div className="cardArea">
           <Card image={logo3} university={"University of West London"} />
+          </div>
+          <div className="cardArea">
           <Card image={logo4} university={"University of Hull"} />
+          </div>
+          <div className="cardArea">
           <Card image={logo5} university={"University of Birmingham"} />
-        </div>
+          </div>
+         
+          
+        </Carousel>
         <div className="heroBox">
           <div className="heroImg">
             <p>#UniversitiesHub</p>
@@ -160,9 +200,12 @@ function Landing() {
             .slice(0, showAllCards ? undefined : 6)
             .map((card, index) => (
               <NavLink to="/CollegeDetails" key={index}>
-                <UniCard img={url+card.image} text={card.name} address={card.shortaddress} description={card.Description}/>
-
-
+                <UniCard
+                  img={url + card.image}
+                  text={card.name}
+                  address={card.shortaddress}
+                  description={card.Description}
+                />
               </NavLink>
             ))}
 
@@ -221,7 +264,7 @@ function Card(props) {
   const { image, university } = props;
   return (
     <>
-      <div className="card ">
+      <div className="card">
         <div className="cardImg">
           <img src={image} alt="" />
         </div>
@@ -276,9 +319,7 @@ function UniCard(props) {
             </div>
             <div class="theback">
               <p className="theback-p1">Description</p>
-              <p className="theback-p2">
-              {props.description}
-              </p>
+              <p className="theback-p2">{props.description}</p>
             </div>
           </div>
         </div>
