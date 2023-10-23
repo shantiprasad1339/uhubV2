@@ -28,32 +28,14 @@ const LatestNews = () => {
   useEffect(() => {
     newsGet();
   }, []);
-<<<<<<< HEAD
-
-=======
->>>>>>> 3206c08fcddc3bb2a9ef43315ffca83b6433a6e6
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) {
       return text;
     } else {
-<<<<<<< HEAD
-    
-=======
->>>>>>> 3206c08fcddc3bb2a9ef43315ffca83b6433a6e6
       const truncatedText = text.split(" ").slice(0, 40).join(" ") + "...";
       return truncatedText;
     }
   }
-<<<<<<< HEAD
-
-  const items = latestNews.map((item, index) => (
-    <div style={{ margin: "8px" }}>
-      <CollegeCard
-  title={item.Description}
-  image={url + item.image}
-  detail={truncateText(item.SecondDescription, 50)}
-/>
-=======
   const items = latestNews.map((item, index) => (
     <div style={{ margin: "8px" }}>
       <CollegeCard
@@ -61,7 +43,6 @@ const LatestNews = () => {
         image={url + item.image}
         detail={truncateText(item.SecondDescription, 50)}
       />
->>>>>>> 3206c08fcddc3bb2a9ef43315ffca83b6433a6e6
     </div>
   ));
   return (
