@@ -288,14 +288,9 @@ a {
 }
 
 .latesText h4 {
-    /* width: 491px; */
-    /* height: 68px; */
     flex-shrink: 0;
     color: #000;
     text-shadow: 0px 4px 10px rgba(15, 17, 88, 0.50);
-    /* font-family: Work Sans; */
-    /* font-size: 45px; */
-
     font-style: normal;
     font-weight: 400;
     margin-left: 10px;
@@ -377,10 +372,13 @@ a {
 }
 
 .NewsCard {
-    display: grid;
+    display: flex;
     row-gap: 20px;
-    justify-content: space-evenly;
-    grid-template-columns: auto auto;
+    justify-content: space-between;
+    justify-content: center;
+    /* grid-template-columns: auto auto; */
+    flex-wrap: wrap;
+
 }
 
 .cardIcons {
@@ -395,9 +393,7 @@ a {
 /* Media query for mobile screens */
 @media (max-width: 1040px) {
     .css-i4bv87-MuiSvgIcon-root {
-
         margin-top: 5px;
-
     }
 
     .UniversityCards {
@@ -422,20 +418,15 @@ a {
         margin-top: 190px;
     }
 
-    .NewsCard {
-        display: grid;
-
-    }
-
     .news {
-        width: 550px;
+        width: 500px;
     }
 
     .NewsCard {
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         row-gap: 20px;
-        justify-content: space-evenly;
-        grid-template-columns: auto auto;
+        justify-content: space-between;
     }
 }
 
@@ -471,7 +462,7 @@ a {
 @media (max-width: 780px) {
 
     .card {
-        width: 25%;
+        width: 70%;
         max-width: none;
         height: 250px;
         flex-direction: column;
@@ -480,19 +471,18 @@ a {
         align-items: center;
         padding: 20px;
         text-align: left;
-        font-size: 14px;
-
     }
-
-
     .navButtons button {
         width: 155px;
         font-size: 20px;
     }
 
     .NewsCard {
-        display: grid;
-        grid-template-columns: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        justify-content: center;
+
     }
 
     .card:hover {
@@ -623,6 +613,16 @@ a {
     .UniversityCard {
         width: 190px;
     }
+    .card {
+        width: 200px !important;
+        height: 210px !important;
+    }
+
+    .cardText h4 {
+        font-size: 16px;
+        margin-top: -1px;
+        margin-bottom: 4px;
+    }
 }
 
 @media (max-width: 490px) {
@@ -634,6 +634,7 @@ a {
     .card {
         width: 208px !important;
         height: 244px !important;
+        margin-top: 70px;
     }
 
 
@@ -654,21 +655,6 @@ a {
      
     .latesText h4 {
         font-size: 26px;
-    }
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 200px !important;
-        height: 210px !important;
-    }
-
-    .cardText h4 {}
-
-    .cardText h4 {
-        font-size: 16px;
-        margin-top: -1px;
-        margin-bottom: 4px;
     }
 }
 
