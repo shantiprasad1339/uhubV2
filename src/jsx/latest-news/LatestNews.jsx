@@ -20,7 +20,7 @@ const LatestNews = () => {
     return axios
       .get("https://hammerhead-app-p3s8r.ondigitalocean.app/vlog/get")
       .then((res) => {
-        console.log(res.data.data);
+        console.log(res    );
         setLatestNews(res.data.data[0]);
       });
   }

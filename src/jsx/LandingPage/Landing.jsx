@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import Navbar from "../NavBar/Navbar";
 import { NavLink } from "react-router-dom";
-
 import banner from "../../../public/Images/BannerImage.png";
 import logo from "../../../public/Images/cardLogo.png";
 import logo2 from "../../../public/Images/cardImg2.png";
@@ -26,30 +25,10 @@ function Landing() {
   const [universties, setUniversities] = useState([]);
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
-
-  const cardData = [
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-    { img: Maintenance, text: "Engineering" },
-  ];
-
+  
   const toggleCards = () => {
     setShowAllCards(!showAllCards);
   };
-
   const toggleNews = () => {
     setShowAllNews(!showAllNews);
   };
@@ -58,7 +37,6 @@ function Landing() {
     NewsGet();
     universtyGet();
   }, []);
-
   function BannerGet() {
     return axios
       .get("https://hammerhead-app-p3s8r.ondigitalocean.app/banner/get")
@@ -160,22 +138,13 @@ function Landing() {
           partialVisible={false}
           dotListClass="custom-dot-list-style"
         >
-          <div className="cardArea">
-            <Card image={logo} university={"University Of oxford"} />
-          </div>
-          <div className="cardArea">
-            <Card image={logo2} university={"University of Hertfordshire"} />
-          </div>
-          <div className="cardArea">
-          <Card image={logo3} university={"University of West London"} />
-          </div>
-          <div className="cardArea">
-          <Card image={logo4} university={"University of Hull"} />
-          </div>
-          <div className="cardArea">
-          <Card image={logo5} university={"University of Birmingham"} />
-          </div>
          
+          {universties
+            .slice(0, showAllCards ? undefined : 6)
+            .map((card, index) => (
+              <div className="cardArea">
+              <Card image={url + card.image} university={card.name} />
+            </div>))}
           
         </Carousel>
         <div className="heroBox">
@@ -194,7 +163,6 @@ function Landing() {
           <button>Exams</button>
           <button>Course</button>
         </div> */}
-
         <div className="UniversityCards">
           {universties
             .slice(0, showAllCards ? undefined : 6)
@@ -208,10 +176,8 @@ function Landing() {
                 />
               </NavLink>
             ))}
-
           {/* <UniCard img={Maintenance} text={'Engineering'} /> */}
         </div>
-
         <div className="seeMoreBtn">
           <button className="btn btn-primary mb-4" onClick={toggleCards}>
             {showAllCards ? "See Less" : "See More"}
@@ -248,7 +214,7 @@ function Landing() {
               );
             })}
         </div>
-        <div className="viewAllBtn">
+        <div className="viewAllBtn">      
           <button onClick={toggleNews}>
             {showAllNews ? "View Less Updates" : "View All Updates"}
           </button>
@@ -257,9 +223,7 @@ function Landing() {
     </>
   );
 }
-
 export default Landing;
-
 function Card(props) {
   const { image, university } = props;
   return (
@@ -268,9 +232,7 @@ function Card(props) {
         <div className="cardImg">
           <img src={image} alt="" />
         </div>
-        <div className="cardText">
-          <h4>{university}</h4>
-        </div>
+        {university}
         <div className="cardIcons">
           <div className="cardLocation">
             <LocationOnIcon />
@@ -286,11 +248,19 @@ function Card(props) {
   );
 }
 export { Card };
-
 function UniCard(props) {
   const styles = {
     card: {},
   };
+  function truncateText(text, maxLength) {
+    if (text.length <= maxLength) {
+      return text;
+    } else {
+      const truncatedText = text.split(" ").slice(0, maxLength).join(" ") + "...";
+      return truncatedText;
+    }
+  }
+  
   return (
     <>
       {/* <div className="unicard">
@@ -302,11 +272,8 @@ function UniCard(props) {
           </div>
         </div>
       </div> */}
-
       {/* <div className="unicard">
         <div className="UniversityCard">
-         
-
         </div>
       </div> */}
       <div className="unicard">
@@ -319,7 +286,8 @@ function UniCard(props) {
             </div>
             <div class="theback">
               <p className="theback-p1">Description</p>
-              <p className="theback-p2">{props.description}</p>
+              <p className="theback-p2">    {truncateText(props.description, 20)}
+</p>
             </div>
           </div>
         </div>
@@ -328,8 +296,8 @@ function UniCard(props) {
   );
 }
 export { UniCard };
-
 function Newscard(props) {
+  
   return (
     <>
       <div className="news">
