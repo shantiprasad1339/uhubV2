@@ -179,12 +179,11 @@ a {
 }
 
 .UniversityCards {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    /* gap: 30px; */
+    display: flex;
     justify-content: space-evenly;
     width: 100%;
     margin-top: 60px;
+    flex-wrap: wrap;
 
 }
 .universityimg img{
@@ -411,12 +410,11 @@ word-break: break-all;
     }
 
     .UniversityCards {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        /* gap: 30px; */
+        display: flex;
         justify-content: space-evenly;
         width: 100%;
         margin-top: 60px;
+        flex-wrap: wrap;
 
     }
 
@@ -564,10 +562,11 @@ word-break: break-all;
     }
 
     .UniversityCards {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: center;
+        display: flex;
+        /* grid-template-columns: auto auto; */
+        justify-content: space-evenly;
         align-items: center;
+        flex-wrap: wrap;
         padding: 10px;
     }
 
@@ -620,9 +619,9 @@ word-break: break-all;
         padding: 10px;
     }
 
-    .UniversityCards {
+    /* .UniversityCards {
         gap: 10px;
-    }
+    } */
 
     .UniversityCard {
         width: 190px;
@@ -643,6 +642,9 @@ word-break: break-all;
     .cardImg img {
         height: 100px;
         margin-top: 20px;
+    }
+    .banner img {
+        padding-bottom: 10px;
     }
 
     .card {
