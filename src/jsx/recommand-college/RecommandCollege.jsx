@@ -44,3 +44,6 @@ const CollegeCard = (props) => {
 }
 
 export {CollegeCard};
+
+
+        
