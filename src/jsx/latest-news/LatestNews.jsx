@@ -15,7 +15,7 @@ const responsive = {
 };
 
 const LatestNews = () => {
-  const [latestNews, setLatestNews] = useState([]);
+  const [latestNews, setLatestNews] = useState([]); 
   function newsGet() {
     return axios
       .get("https://hammerhead-app-p3s8r.ondigitalocean.app/vlog/get")
@@ -32,16 +32,16 @@ const LatestNews = () => {
     if (text.length <= maxLength) {
       return text;
     } else {
-      const truncatedText = text.split(" ").slice(0, 40).join(" ") + "...";
+      const truncatedText = text.split(" ").slice(0, 30).join(" ") + "...";
       return truncatedText;
     }
   }
   const items = latestNews.map((item, index) => (
     <div style={{ margin: "8px" }}>
       <CollegeCard
-        title={item.Description}
+        title={truncateText(item.Description, 10)}
         image={url + item.image}
-        detail={truncateText(item.SecondDescription, 50)}
+        detail={truncateText(item.SecondDescription, 10)}
       />
     </div>
   ));

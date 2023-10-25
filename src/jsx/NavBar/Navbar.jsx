@@ -51,7 +51,7 @@ function Navbar() {
               Login /{" "}
             </NavLink>
             <NavLink to={"/SignUp"} className="login-button">
-              Sing Up
+              Sign Up
             </NavLink>
             {/* <img src={Whatsapp} alt="" /> */}
             {/* <img src={messanger} alt="" /> */}

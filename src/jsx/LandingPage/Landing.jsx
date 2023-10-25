@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import Navbar from "../NavBar/Navbar";
-import { NavLink } from "react-router-dom";
+import { NavLink ,useNavigate} from "react-router-dom";
 import banner from "../../../public/Images/BannerImage.png";
 import logo from "../../../public/Images/cardLogo.png";
 import logo2 from "../../../public/Images/cardImg2.png";
@@ -113,6 +113,7 @@ function Landing() {
             draggable={true}
             // showDots={true}
             infinite={true}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
             partialVisible={false}
             dotListClass="custom-dot-list-style"
           >
@@ -136,6 +137,7 @@ function Landing() {
           // showDots={true}
           infinite={true}
           partialVisible={false}
+          removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
         >
           {universties
@@ -166,7 +168,7 @@ function Landing() {
           {universties
             .slice(0, showAllCards ? undefined : 6)
             .map((card, index) => (
-              <NavLink to="/CollegeDetails" key={index}>
+              <NavLink to="" key={index}>
                 <UniCard
                   img={url + card.image}
                   text={card.name}
@@ -260,10 +262,19 @@ function UniCard(props) {
       return truncatedText;
     }
   }
+  const navigate = useNavigate();
 
+function uniCardLocalSet (){
+  // const propsData = JSON.stringify(props);
+  localStorage.setItem('uniCardImg', props.img);
+  localStorage.setItem('uniCardText', props.text);
+  localStorage.setItem('uniCardAddress', props.address);
+  navigate('/collegeDetails');
+  window.location.reload();
+}
   return (
     <>
-      <div className="unicard">
+      <div className="unicard" onClick={uniCardLocalSet}>
         <div class="maincontainer">
           <div class="thecard">
             <div class="thefront">

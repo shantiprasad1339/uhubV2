@@ -27,15 +27,23 @@ import CutOff from "../cutOff/CutOff";
 import Infra from "../infastructer/Infastructer";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+const propsData = localStorage.getItem("uniCardImg");
+const propsText = localStorage.getItem("uniCardText");
+const propsAddress = localStorage.getItem("uniCardAddress");
 
 function CollegeDetails() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
+  // console.log(propsData, propsText);
   return (
     <>
       <Navbar />
-      <TopImgUniversity />
+      <TopImgUniversity
+        UniversityImg={propsData}
+        universityText={propsText}
+        universityAddress={propsAddress}
+      />
 
       <UniversityDetailsButton />
       <UnviversityTable />
@@ -50,7 +58,8 @@ function CollegeDetails() {
 
 export default CollegeDetails;
 
-function TopImgUniversity() {
+function TopImgUniversity(props) {
+  // console.log(props.universityAddress);
   return (
     <>
       <div className="CollegeDetails">
@@ -60,7 +69,7 @@ function TopImgUniversity() {
         <div className="UniversityBanner">
           <div className="UniversityLogo">
             <div className="UniLogo">
-              <img src={CardImg} alt="" />
+              <img src={props.UniversityImg} alt="" />
             </div>
           </div>
           <div className="UniversityAddressDetails">
@@ -73,13 +82,13 @@ function TopImgUniversity() {
             </div> */}
 
             <div className="uniTopAdress">
-              <h4>UNIVERSITY OF BIRMINGHAM</h4>
+              <h4>{props.universityText}</h4>
             </div>
             <div className="unibottomadd">
               <div className="universityLocation">
                 <h6>
                   {" "}
-                  <LocationOnIcon /> Birmingham, England
+                  <LocationOnIcon /> {props.universityAddress}
                 </h6>
               </div>
               <div className="ratingCount">
