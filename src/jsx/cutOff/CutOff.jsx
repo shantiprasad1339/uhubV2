@@ -6,6 +6,7 @@ import Card from "../card2/card2";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import NavBar from '../NavBar/Navbar'
+import Footer from '../footer/footer'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
 function CutOff() {
@@ -95,7 +96,7 @@ function CutOff() {
         <Carousel
           swipeable={true}
           draggable={true}
-          showDots={true}
+          showDots={false}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={true}
@@ -114,6 +115,7 @@ function CutOff() {
           <Card />
         </Carousel>
       </div>
+      <Footer/>
     </>
   );
 }

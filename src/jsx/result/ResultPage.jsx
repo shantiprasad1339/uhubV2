@@ -6,64 +6,67 @@ import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import img3 from "../../../public/Images/cardImg.jpeg";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import Card from "../card2/card2";
-import Navbar from '../NavBar/Navbar'
-import MenuIcon from '@mui/icons-material/Menu';
-import Footer from '../footer/footer'
+import Navbar from "../NavBar/Navbar";
+import MenuIcon from "@mui/icons-material/Menu";
+import Footer from "../footer/footer";
 
 function ResultPage() {
-  const [show, setShow] = useState(false)
-  const handleShow = () => setShow(!show)
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(!show);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-  
-   return (
+  return (
     <>
- <Navbar/>
+      <Navbar />
       <ResultTopBox />
       <ResultTopHeading />
       <div className="filter-content-box">
         <div>
-          <p onClick={handleShow} className="hideBox2"><MenuIcon/></p>
-          <ResultFilter show={show}/>
-          <ResultFilter show={show}/>
-          <ResultFilter show={show}/>
-          <ResultFilter show={show}/>
-          <ResultFilter show={show}/>
-          <ResultFilter show={show}/>
+          <p onClick={handleShow} className="hideBox2">
+            <MenuIcon />
+          </p>
+          <ResultFilter show={show} />
+          <ResultFilter show={show} />
+          <ResultFilter show={show} />
+          <ResultFilter show={show} />
+          <ResultFilter show={show} />
+          <ResultFilter show={show} />
         </div>
 
-        {!show && <div className="result-filter-side-box">
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultDownBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultDownBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <ResultSideBox />
-          <div>
-            <h2 style={{paddingTop:'50px'}}>Commerce and Banking Related News</h2>
-            <div className="result-filter-card-box">
-              <Card />
-              <Card />
-              <Card />
+        {!show && (
+          <div className="result-filter-side-box">
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultDownBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultDownBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <ResultSideBox />
+            <div>
+              <h2 style={{ paddingTop: "50px" }}>
+                Commerce and Banking Related News
+              </h2>
+              <div className="result-filter-card-box">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+              </div>
             </div>
           </div>
-          <div className="result-filter-card-box">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-        </div>}
-      </div> 
-      <Footer/>
+        )}
+      </div>
+      <Footer />
     </>
   );
 }
@@ -101,16 +104,16 @@ function ResultTopHeading() {
       <div className="result-top-filters">
         <p className="result-degree"></p>
         <div className="filterNames">
-        <p className="result-applied">Applied Filter</p>
-        <p className="result-b-com">
-          B.Com. <ClearRoundedIcon />
-        </p>
-        <p className="result-b-com">
-          M.Com. <ClearRoundedIcon />
-        </p>
-        <p className="Search-filter " >
-          Search Filter <SearchRoundedIcon />
-        </p>
+          <p className="result-applied">Applied Filter</p>
+          <p className="result-b-com">
+            B.Com. <ClearRoundedIcon />
+          </p>
+          <p className="result-b-com">
+            M.Com. <ClearRoundedIcon />
+          </p>
+          <p className="Search-filter ">
+            Search Filter <SearchRoundedIcon />
+          </p>
         </div>
       </div>
     </>
@@ -120,7 +123,7 @@ function ResultTopHeading() {
 function ResultFilter(props) {
   return (
     <>
-      {props.show && <><p style={{ fontSize: "22px" }}>DEGEREE</p>
+      {props.show && <><p style={{ fontSize: "22px" }}></p>
       <div className="ResultFilter-box">
         <fom action="">
           <input
@@ -152,37 +155,37 @@ function ResultFilter(props) {
         </fom>
       </div></>}
       <div className="hideBox">
-      <p style={{ fontSize: "22px" }}>DEGEREE</p>
-      <div className="ResultFilter-box">
-        <fom action="">
-          <input
-            type="search"
-            id="gsearch"
-            name="gsearch"
-            placeholder=" Search"
-            className="result-search"
-          />
-          <br />
-          <RadioBtn name={"B.A"} />
-          <RadioBtn name={"B.com"} />
-          <RadioBtn name={"B.S.C"} />
-          <RadioBtn name={"B.C.A"} />
-          <RadioBtn name={"B.Tech"} />
-          <RadioBtn name={"B.Ed"} />
-          <RadioBtn name={"M.A"} />
-          <RadioBtn name={"M.Com"} />
-          <RadioBtn name={"M.S.C"} />
-          <RadioBtn name={"M.C.A"} />
-          <RadioBtn name={"M.Tech"} />
-          <RadioBtn name={"M.Ed"} />
-          <RadioBtn name={"M.B.B.S"} />
-          <RadioBtn name={"B.com"} />
-          <RadioBtn name={"B.com"} />
-          <RadioBtn name={"B.com"} />
-          <RadioBtn name={"B.com"} />
-          <RadioBtn name={"B.com"} />
-        </fom>
-      </div>
+        <p style={{ fontSize: "22px" }}>DEGEREE</p>
+        <div className="ResultFilter-box">
+          <fom action="">
+            <input
+              type="search"
+              id="gsearch"
+              name="gsearch"
+              placeholder=" Search"
+              className="result-search"
+            />
+            <br />
+            <RadioBtn name={"B.A"} />
+            <RadioBtn name={"B.com"} />
+            <RadioBtn name={"B.S.C"} />
+            <RadioBtn name={"B.C.A"} />
+            <RadioBtn name={"B.Tech"} />
+            <RadioBtn name={"B.Ed"} />
+            <RadioBtn name={"M.A"} />
+            <RadioBtn name={"M.Com"} />
+            <RadioBtn name={"M.S.C"} />
+            <RadioBtn name={"M.C.A"} />
+            <RadioBtn name={"M.Tech"} />
+            <RadioBtn name={"M.Ed"} />
+            <RadioBtn name={"M.B.B.S"} />
+            <RadioBtn name={"B.com"} />
+            <RadioBtn name={"B.com"} />
+            <RadioBtn name={"B.com"} />
+            <RadioBtn name={"B.com"} />
+            <RadioBtn name={"B.com"} />
+          </fom>
+        </div>
       </div>
     </>
   );

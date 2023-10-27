@@ -1,6 +1,7 @@
 import React from "react";
 import "./content.css";
 import NavBar from '../NavBar/Navbar'
+import Footer from '../footer/footer'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
 const content = () =>  {
@@ -70,6 +71,7 @@ const content = () =>  {
               eligibility criteria, entrance exams and admission process can be
               checked below.'
               />
+              <Footer/>
     </>
   );
 }

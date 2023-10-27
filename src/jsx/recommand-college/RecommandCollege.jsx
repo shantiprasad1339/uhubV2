@@ -29,6 +29,7 @@ export default RecommandCollege;
 const CollegeCard = (props) => {
   return (
     <>
+    
     <div className="rd-college-box">
        <div>
         <img src={props.image} alt="University Image" className="university-img"/>

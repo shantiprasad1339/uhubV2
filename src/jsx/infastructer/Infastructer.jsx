@@ -11,6 +11,7 @@ import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import Card from "../card2/card2";
 import NavBar from '../NavBar/Navbar'
+import Footer from '../footer/footer'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
 
@@ -44,7 +45,7 @@ function Infastructer() {
     },
     desktop: {
       breakpoint: { max: 2000, min: 1024 },
-      items: 5,
+      items: 6,
     },
     tablet: {
       breakpoint: { max: 1024, min: 764 },
@@ -104,7 +105,7 @@ function Infastructer() {
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            showDots={false}
             responsive={responsive2}
             ssr={true}
             infinite={true}
@@ -148,7 +149,7 @@ function Infastructer() {
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            showDots={false}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
@@ -172,6 +173,7 @@ function Infastructer() {
 
 
       </div>
+      <Footer/>
     </>
   );
 }

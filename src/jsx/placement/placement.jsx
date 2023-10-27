@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import EnrollBox from "../Enrollbox/Enrollbox";
 import NavBar from '../NavBar/Navbar'
+import Footer from '../footer/footer'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
 function Placement() {
@@ -70,7 +71,7 @@ function Placement() {
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            showDots={false}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
@@ -91,7 +92,7 @@ function Placement() {
             
           </Carousel>
         </div>
-      
+      <Footer/>
     </>
   );
 }

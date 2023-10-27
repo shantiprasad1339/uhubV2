@@ -192,8 +192,7 @@ a {
 
 /* card */
 .alice-carousel__stage-item {
-width: 385px !important;
-height: 390px !important;
+height: 150px !important;
 word-break: break-all;
 
 }
