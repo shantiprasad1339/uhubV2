@@ -8,6 +8,9 @@ import EnrollBox from "../Enrollbox/Enrollbox";
 import NavBar from '../NavBar/Navbar'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
+const propsData = localStorage.getItem("uniCardImg");
+const propsText = localStorage.getItem("uniCardText");
+const propsAddress = localStorage.getItem("uniCardAddress");
 function Placement() {
   const responsive = {
     superLargeDesktop: {
@@ -30,8 +33,11 @@ function Placement() {
   return (
     <>
     <NavBar/>
-    <TopImgUniversity />
-
+    <TopImgUniversity
+        UniversityImg={propsData}
+        universityText={propsText}
+        universityAddress={propsAddress}
+      />
       <UniversityDetailsButton />
       <div className="placement-container">
         <Box1

@@ -8,6 +8,10 @@ import Carousel from "react-multi-carousel";
 import NavBar from '../NavBar/Navbar'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
+
+const propsData = localStorage.getItem("uniCardImg");
+const propsText = localStorage.getItem("uniCardText");
+const propsAddress = localStorage.getItem("uniCardAddress");
 function CutOff() {
   const responsive = {
     superLargeDesktop: {
@@ -30,7 +34,11 @@ function CutOff() {
   return (
     <>
     <NavBar/>
-    <TopImgUniversity />
+    <TopImgUniversity
+        UniversityImg={propsData}
+        universityText={propsText}
+        universityAddress={propsAddress}
+      />
 
       <UniversityDetailsButton />
       <div className="cutOf-container">

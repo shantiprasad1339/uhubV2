@@ -3,11 +3,18 @@ import "./content.css";
 import NavBar from '../NavBar/Navbar'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
+const propsData = localStorage.getItem("uniCardImg");
+const propsText = localStorage.getItem("uniCardText");
+const propsAddress = localStorage.getItem("uniCardAddress");
 const content = () =>  {
   return (
     <>
     <NavBar/>
-    <TopImgUniversity />
+    <TopImgUniversity
+        UniversityImg={propsData}
+        universityText={propsText}
+        universityAddress={propsAddress}
+      />
 
       <UniversityDetailsButton />
      <Box1 heading={'Admissions at IIT Bombay'} 

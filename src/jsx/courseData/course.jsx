@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import NavBar from '../NavBar/Navbar'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
+const propsData = localStorage.getItem("uniCardImg");
+const propsText = localStorage.getItem("uniCardText");
+const propsAddress = localStorage.getItem("uniCardAddress");
 const Course = () => {
   return (
     <>
@@ -17,7 +20,11 @@ function Details() {
   return (
     <>
     <NavBar/>
-    <TopImgUniversity />
+    <TopImgUniversity
+        UniversityImg={propsData}
+        universityText={propsText}
+        universityAddress={propsAddress}
+      />
 
       <UniversityDetailsButton />
       <div className="course-container">

@@ -44,7 +44,10 @@ body{
     color:rgb(61, 61, 61);
     text-align: justify;
 }
-
+.uni-content {
+    
+    height: 200px;
+}
 @media only screen and (max-width:767.98px){
     .heading-text-fnt{
         color:rgb(0, 0, 0);
