@@ -48,7 +48,7 @@ const LatestNews = () => {
   return (
     <>
       <div className="container-fluid">
-        <h2 className="heading-text-fnt mt-3 text-center">Latest News</h2>
+        <h2 className="heading-text-fnt mt-3 text-center" >Latest News</h2>
         <AliceCarousel mouseTracking items={items} responsive={responsive} />
       </div>
     </>

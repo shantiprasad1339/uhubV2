@@ -39,7 +39,7 @@ function ResultPage() {
   function UniversityGet() {
     return axios
       .get(
-         'https://hammerhead-app-p3s8r.ondigitalocean.app/university/search?search= + "strValue"'
+         ` https://hammerhead-app-p3s8r.ondigitalocean.app/university/search?search=${strValue}`
       )
       .then((res) => {
         console.log(res);
@@ -48,13 +48,22 @@ function ResultPage() {
   }
   const reduxValue = useSelector((state) => state);
 
-  const strValue = `${reduxValue.filters.degree} ${reduxValue.filters.hostel && reduxValue.filters.hostel } ${reduxValue.filters.institute}`;
-  console.log(strValue);
+  // const strValue = `${reduxValue.filters.degree} ${reduxValue.filters.hostel && reduxValue.filters.hostel } ${reduxValue.filters.institute}`;
+  const filters = reduxValue.filters;
 
+  const filteredValues = [
+    filters.degree,
+    filters.hostel && filters.hostel,
+    filters.institute,
+  ].filter(Boolean); 
+  
+  const strValue = filteredValues.join(",");
+  
   useEffect(() => {
     filterGet();
     UniversityGet();
   }, [strValue]);
+  // console.log(strValue);
 
   return (
     <>

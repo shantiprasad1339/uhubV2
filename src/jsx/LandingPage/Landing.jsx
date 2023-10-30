@@ -120,7 +120,7 @@ function Landing() {
             {bannerImg.map((item, index) => {
               return (
                 <>
-                  <div key={index}>
+                  <div key={index} >
                     <img src={url + item.image} alt="" />{" "}
                   </div>
                 </>
