@@ -42,6 +42,7 @@ const items = [
 const Media = () => {
   return (
     <>
+    
       <div className="container">
         <h2 className="heading-text-fnt mt-3 text-center mb-3">
           Uk Universities Hub in Media

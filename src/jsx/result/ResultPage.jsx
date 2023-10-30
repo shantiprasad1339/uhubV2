@@ -150,9 +150,9 @@ function ResultTopHeading() {
           <p className="result-b-com">
             M.Com. <ClearRoundedIcon />
           </p>
-          <p className="Search-filter ">
+          {/* <p className="Search-filter ">
             Search Filter <SearchRoundedIcon />
-          </p>
+          </p> */}
         </div>
       </div>
     </>
@@ -198,14 +198,14 @@ function ResultFilter({ type, show, name }) {
       <div className="hideBox">
         <p style={{ fontSize: "22px" }}>{name}</p>
         <div className="ResultFilter-box">
-          <fom action="">
-            <input
+          <form action="">
+            {/* <input
               type="search"
               id="gsearch"
               name="gsearch"
               placeholder=" Search"
               className="result-search"
-            />
+            /> */}
             <br />
             {type &&
               type.map((item, index) => {
@@ -217,6 +217,7 @@ function ResultFilter({ type, show, name }) {
                       value={item.name}
                       checked={selectedInstitute === item.name}
                       onChange={() => dispatch(setInstitute(item.name))}
+                      className="radioSize"
                     />
                     <label htmlFor="" className="result-checkbox-label">
                       {item.name}
@@ -224,7 +225,7 @@ function ResultFilter({ type, show, name }) {
                   </div>
                 );
               })}
-          </fom>
+          </form>
         </div>
       </div>
     </>
@@ -245,13 +246,13 @@ function ResultFilter2({ type, show, name }) {
         <p style={{ fontSize: "22px" }}>{name}</p>
         <div className="ResultFilter-box">
           <fom action="">
-            <input
+            {/* <input
               type="search"
               id="gsearch"
               name="gsearch"
               placeholder=" Search"
               className="result-search"
-            />
+            /> */}
             <br />
             {type &&
               type.map((item, index) => {
@@ -263,6 +264,7 @@ function ResultFilter2({ type, show, name }) {
                         name="radioGroup"
                         value={item.name}
                         onChange={() => dispatch(setDegree(item))}
+                        className="radioSize"
                       />
                       <label htmlFor="" className="result-checkbox-label">
                         {item}
@@ -290,13 +292,13 @@ function ResultFilter3({ type, show, name }) {
         <p style={{ fontSize: "22px" }}>{name}</p>
         <div className="ResultFilter-box">
           <fom action="">
-            <input
+            {/* <input
               type="search"
               id="gsearch"
               name="gsearch"
               placeholder=" Search"
               className="result-search"
-            />
+            /> */}
             <br />
             {type &&
               type.map((item, index) => {
@@ -307,6 +309,7 @@ function ResultFilter3({ type, show, name }) {
                       name="radioGroup"
                       value={item.name}
                       onChange={() => dispatch(setHostel(item.name))}
+                      className="radioSize"
                     />
                     <label htmlFor="" className="result-checkbox-label">
                       {item.name}
@@ -319,6 +322,7 @@ function ResultFilter3({ type, show, name }) {
               name="radioGroup"
               value="Boys"
               onChange={() => dispatch(setHostel("Boys"))}
+              className="radioSize"
             />
             <label htmlFor="" className="result-checkbox-label">
               Boys
@@ -330,6 +334,7 @@ function ResultFilter3({ type, show, name }) {
               name="radioGroup"
               value="co-ed  "
               onChange={() => dispatch(setHostel("Co-Ed"))}
+              className="radioSize"
             />
             <label htmlFor="" className="result-checkbox-label">
               Co-Ed
