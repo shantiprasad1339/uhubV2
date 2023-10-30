@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import Navbar from "../NavBar/Navbar";
-import { NavLink ,useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import banner from "../../../public/Images/BannerImage.png";
 import logo from "../../../public/Images/cardLogo.png";
 import logo2 from "../../../public/Images/cardImg2.png";
@@ -49,7 +49,7 @@ function Landing() {
     return axios
       .get("https://hammerhead-app-p3s8r.ondigitalocean.app/university/gets")
       .then((res) => {
-        console.log(res.data.data);
+        console.log(res);
         setUniversities(res.data.data);
       });
   }
@@ -92,7 +92,7 @@ function Landing() {
       breakpoint: { max: 2000, min: 1024 },
       items: 4,
     },
-    tablet: {
+     tablet: {
       breakpoint: { max: 1024, min: 764 },
       items: 3,
     },
@@ -264,14 +264,14 @@ function UniCard(props) {
   }
   const navigate = useNavigate();
 
-function uniCardLocalSet (){
-  // const propsData = JSON.stringify(props);
-  localStorage.setItem('uniCardImg', props.img);
-  localStorage.setItem('uniCardText', props.text);
-  localStorage.setItem('uniCardAddress', props.address);
-  navigate('/collegeDetails');
-  window.location.reload();
-}
+  function uniCardLocalSet() {
+    // const propsData = JSON.stringify(props);
+    localStorage.setItem("uniCardImg", props.img);
+    localStorage.setItem("uniCardText", props.text);
+    localStorage.setItem("uniCardAddress", props.address);
+    navigate("/collegeDetails");
+    window.location.reload();
+  }
   return (
     <>
       <div className="unicard" onClick={uniCardLocalSet}>

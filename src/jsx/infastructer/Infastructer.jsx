@@ -14,7 +14,9 @@ import NavBar from '../NavBar/Navbar'
 import Footer from '../footer/footer'
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
-
+const propsData = localStorage.getItem("uniCardImg");
+const propsText = localStorage.getItem("uniCardText");
+const propsAddress = localStorage.getItem("uniCardAddress");
 function Infastructer() {
   const responsive = {
     superLargeDesktop: {
@@ -59,8 +61,11 @@ function Infastructer() {
   return (
     <>
     <NavBar/>
-    <TopImgUniversity />
-
+    <TopImgUniversity
+        UniversityImg={propsData}
+        universityText={propsText}
+        universityAddress={propsAddress}
+      />
       <UniversityDetailsButton />
       <div className="info-container">
         <Box1

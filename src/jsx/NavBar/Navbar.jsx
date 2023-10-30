@@ -23,7 +23,7 @@ function Navbar() {
       <div className="nav">
         <div className="topNav">
           <div className="navLogo">
-            <NavLink to="/">
+            <NavLink to="/home">
               <img src={NavLogo} />
             </NavLink>
           </div>

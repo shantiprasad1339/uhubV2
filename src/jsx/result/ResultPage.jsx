@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ResultPage.css";
 import { NavLink } from "react-router-dom";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
@@ -9,12 +9,52 @@ import Card from "../card2/card2";
 import Navbar from "../NavBar/Navbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import Footer from "../footer/footer";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { setInstitute, setDegree, setHostel } from "../Redux/PostSlice";
 
 function ResultPage() {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [institute, setInstitute] = useState([]);
+  const [degree, setDgree] = useState([]);
+  const [hostel, setHostel] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [reduxValueGet, setReduxValue] = useState();
+
+  function filterGet() {
+    return axios
+      .get(
+        "https://hammerhead-app-p3s8r.ondigitalocean.app/university/search/filter"
+      )
+      .then((res) => {
+        // console.log( res.data.data[0]);
+        setInstitute(res.data.data[0].institute_type);
+        setDgree(res.data.data[1].degree.name);
+        setHostel(res.data.data[2].hostel);
+      });
+  }
+  function UniversityGet() {
+    return axios
+      .get(
+         'https://hammerhead-app-p3s8r.ondigitalocean.app/university/search?search= + "strValue"'
+      )
+      .then((res) => {
+        console.log(res);
+        // setFiltered(res);
+      });
+  }
+  const reduxValue = useSelector((state) => state);
+
+  const strValue = `${reduxValue.filters.degree} ${reduxValue.filters.hostel && reduxValue.filters.hostel } ${reduxValue.filters.institute}`;
+  console.log(strValue);
+
+  useEffect(() => {
+    filterGet();
+    UniversityGet();
+  }, [strValue]);
 
   return (
     <>
@@ -26,12 +66,9 @@ function ResultPage() {
           <p onClick={handleShow} className="hideBox2">
             <MenuIcon />
           </p>
-          <ResultFilter show={show} />
-          <ResultFilter show={show} />
-          <ResultFilter show={show} />
-          <ResultFilter show={show} />
-          <ResultFilter show={show} />
-          <ResultFilter show={show} />
+          <ResultFilter show={show} type={institute} name={"Institue Type"} />
+          <ResultFilter2 show={show} type={degree} name={"Degree"} />
+          <ResultFilter3 show={show} type={hostel} name={"Hostel"} />
         </div>
 
         {!show && (
@@ -58,10 +95,12 @@ function ResultPage() {
                 <Card />
                 <Card />
                 <Card />
-                <Card />
-                <Card />
-                <Card />
               </div>
+            </div>
+            <div className="result-filter-card-box">
+              <Card />
+              <Card />
+              <Card />
             </div>
           </div>
         )}
@@ -120,10 +159,12 @@ function ResultTopHeading() {
   );
 }
 
-function ResultFilter(props) {
+function ResultFilter({ type, show, name }) {
+  const selectedInstitute = useSelector((state) => state.filters.institute);
+  const dispatch = useDispatch();
   return (
     <>
-      {props.show && <><p style={{ fontSize: "22px" }}></p>
+      {/* {props.show && <><p style={{ fontSize: "22px" }}>DEGEREE</p>
       <div className="ResultFilter-box">
         <fom action="">
           <input
@@ -153,9 +194,9 @@ function ResultFilter(props) {
           <RadioBtn name={"B.com"} />
           <RadioBtn name={"B.com"} />
         </fom>
-      </div></>}
+      </div></>} */}
       <div className="hideBox">
-        <p style={{ fontSize: "22px" }}>DEGEREE</p>
+        <p style={{ fontSize: "22px" }}>{name}</p>
         <div className="ResultFilter-box">
           <fom action="">
             <input
@@ -166,44 +207,135 @@ function ResultFilter(props) {
               className="result-search"
             />
             <br />
-            <RadioBtn name={"B.A"} />
-            <RadioBtn name={"B.com"} />
-            <RadioBtn name={"B.S.C"} />
-            <RadioBtn name={"B.C.A"} />
-            <RadioBtn name={"B.Tech"} />
-            <RadioBtn name={"B.Ed"} />
-            <RadioBtn name={"M.A"} />
-            <RadioBtn name={"M.Com"} />
-            <RadioBtn name={"M.S.C"} />
-            <RadioBtn name={"M.C.A"} />
-            <RadioBtn name={"M.Tech"} />
-            <RadioBtn name={"M.Ed"} />
-            <RadioBtn name={"M.B.B.S"} />
-            <RadioBtn name={"B.com"} />
-            <RadioBtn name={"B.com"} />
-            <RadioBtn name={"B.com"} />
-            <RadioBtn name={"B.com"} />
-            <RadioBtn name={"B.com"} />
+            {type &&
+              type.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <input
+                      type="radio"
+                      name="radioGroup"
+                      value={item.name}
+                      checked={selectedInstitute === item.name}
+                      onChange={() => dispatch(setInstitute(item.name))}
+                    />
+                    <label htmlFor="" className="result-checkbox-label">
+                      {item.name}
+                    </label>
+                  </div>
+                );
+              })}
           </fom>
         </div>
       </div>
     </>
   );
 }
-function RadioBtn(props) {
+
+function ResultFilter2({ type, show, name }) {
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const handleRadioChange = () => {
+    const selectedRadioValue = selectedValue;
+  };
+  const selectedDegree = useSelector((state) => state.filters.institute);
+  const dispatch = useDispatch();
   return (
     <>
-      <div style={{ marginTop: "10px" }}>
-        <input
-          type="checkbox"
-          id="course"
-          name="vehicle1"
-          value="Bike"
-          className="result-checkbox"
-        />
-        <label htmlFor="" className="result-checkbox-label">
-          {props.name}
-        </label>
+      <div className="hideBox">
+        <p style={{ fontSize: "22px" }}>{name}</p>
+        <div className="ResultFilter-box">
+          <fom action="">
+            <input
+              type="search"
+              id="gsearch"
+              name="gsearch"
+              placeholder=" Search"
+              className="result-search"
+            />
+            <br />
+            {type &&
+              type.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <div style={{ marginTop: "10px" }}>
+                      <input
+                        type="radio"
+                        name="radioGroup"
+                        value={item.name}
+                        onChange={() => dispatch(setDegree(item))}
+                      />
+                      <label htmlFor="" className="result-checkbox-label">
+                        {item}
+                      </label>
+                    </div>
+                  </div>
+                );
+              })}
+          </fom>
+        </div>
+      </div>
+    </>
+  );
+}
+function ResultFilter3({ type, show, name }) {
+  const [selectHostel, setSelecthostel] = useState("");
+  const handleRadioChange = () => {
+    const selectedRadioValue = selectHostel;
+  };
+  const selectedDegree = useSelector((state) => state);
+  const dispatch = useDispatch();
+  return (
+    <>
+      <div className="hideBox">
+        <p style={{ fontSize: "22px" }}>{name}</p>
+        <div className="ResultFilter-box">
+          <fom action="">
+            <input
+              type="search"
+              id="gsearch"
+              name="gsearch"
+              placeholder=" Search"
+              className="result-search"
+            />
+            <br />
+            {type &&
+              type.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <input
+                      type="radio"
+                      name="radioGroup"
+                      value={item.name}
+                      onChange={() => dispatch(setHostel(item.name))}
+                    />
+                    <label htmlFor="" className="result-checkbox-label">
+                      {item.name}
+                    </label>
+                  </div>
+                );
+              })}
+            <input
+              type="radio"
+              name="radioGroup"
+              value="Boys"
+              onChange={() => dispatch(setHostel("Boys"))}
+            />
+            <label htmlFor="" className="result-checkbox-label">
+              Boys
+            </label>
+
+            <br />
+            <input
+              type="radio"
+              name="radioGroup"
+              value="co-ed  "
+              onChange={() => dispatch(setHostel("Co-Ed"))}
+            />
+            <label htmlFor="" className="result-checkbox-label">
+              Co-Ed
+            </label>
+          </fom>
+        </div>
       </div>
     </>
   );

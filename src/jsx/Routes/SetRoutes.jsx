@@ -27,8 +27,8 @@ const SetRoutes = () => {
     return (
         <>
             <Routes>
-                <Route path='/' element={<LogIn />} />
-                <Route path='/home' element={<Home />} />
+                <Route path='/LogIn' element={<LogIn />} />
+                <Route path='/' element={<Home />} />
                 <Route path='/AllNewPages' element={<AllNewPages />} />
                 <Route path='/CollegeDetails' element={<CollegeDetails />} />
                 <Route path='/signUp' element={<SignUp />} />
