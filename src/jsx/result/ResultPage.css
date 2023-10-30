@@ -305,9 +305,8 @@ margin-top: -10px;
   padding-right: 15px;
 }
 .result-filter-card-box{
-  /* justify-content: center; */
-  display: grid;
-  grid-template-columns: auto auto auto;
+display: flex;
+flex-wrap: wrap;
 }
 
 .hideBox2 {
@@ -329,11 +328,10 @@ margin-top: -10px;
     width: 100%;
     max-width:700px;
   }
-  .result-filter-card-box{
-    /* justify-content: center; */
+  /* .result-filter-card-box{
     display: grid;
     grid-template-columns: auto auto ;
-  }
+  } */
 }
 @media only screen and (min-width: 768px) and (max-width: 1023.98px){
   .result-filter-side-box{
@@ -350,11 +348,10 @@ margin-top: -10px;
     display: flex;
     flex-direction: column;
   }
-  .result-filter-card-box{
+  /* .result-filter-card-box{
     display: grid;
     grid-template-columns: auto auto;
-    /* margin: 20px 0px; */
-  }
+  } */
   .result-filter-side-box {
     width: 65%;
     max-width: 700px;
@@ -412,11 +409,10 @@ margin-top: -10px;
 
 
   
-  .result-filter-card-box{
+  /* .result-filter-card-box{
     display: grid;
     grid-template-columns: auto;
-    /* margin: 20px 0px; */
-  }
+  } */
 
   .result-filter-side-box {
     padding: 20px;

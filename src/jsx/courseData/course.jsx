@@ -1,6 +1,7 @@
 import "./course.css";
 import { NavLink } from "react-router-dom";
 import NavBar from '../NavBar/Navbar'
+import Footer from '../footer/footer';
 import { TopImgUniversity } from "../collegeDetails/CollegeDetails";
 import { UniversityDetailsButton } from "../collegeDetails/CollegeDetails";
 const propsData = localStorage.getItem("uniCardImg");
@@ -225,6 +226,7 @@ function Details() {
         </div>
        
       </div>
+      <Footer/>
     </>
   );
 }

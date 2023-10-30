@@ -24,9 +24,11 @@
     border-radius:13px;
     width:100%;
 }
+
 .footer-search-btn{
     position: absolute;
-    margin-left:640px;
+    /* margin-left:640px; */
+    right: 25px;
     margin-top:-49px;
     background-color:#d70000;
     color:white;
@@ -110,6 +112,7 @@ ul.footer-dtl-list{
     display:flex;
     justify-content: space-between;
 }
+
 @media only screen and (max-width:767.98px){
     .footer-logo-sz{
         width:100%;
@@ -118,6 +121,8 @@ ul.footer-dtl-list{
         object-fit: contain;
        
     }
+
+    
     .footer-logo-box{
         background-color: white;
         padding:0px;
@@ -138,23 +143,7 @@ ul.footer-dtl-list{
         height:50px;
         border-radius:13px;
     }
-    .footer-search-btn{
-        position: absolute;
-        margin-left:150px;
-        margin-top:-38px;
-        background-color:#d70000;
-        color:white;
-        padding-left:10px;
-        padding-right:10px;
-        padding-top:0px;
-        padding-bottom:0px;
-        border:1px solid #d70000;
-        border-radius:10px;
-        box-shadow:2px 2px 2px 2px #d70000;
-        font-size:15px;
-        font-weight:500;
-      
-    }
+ 
     .whatsapp-box{
         background-color: white;
         border-radius: 50%;
@@ -190,6 +179,8 @@ ul.footer-dtl-list{
     }
 }
 
+
+
 @media only screen and (min-width:768px) and (max-width:1023.98px){
     .footer-bg{
         background-color: #0b1141;
@@ -201,23 +192,7 @@ ul.footer-dtl-list{
         height:50px;
         border-radius:13px;
     }
-    .footer-search-btn{
-        position: absolute;
-        margin-left:370px;
-        margin-top:-42px;
-        background-color:#d70000;
-        color:white;
-        padding-left:10px;
-        padding-right:10px;
-        padding-top:3px;
-        padding-bottom:3px;
-        border:1px solid #d70000;
-        border-radius:10px;
-        box-shadow:2px 2px 2px 2px #d70000;
-        font-size:15px;
-        font-weight:500;
-      
-    }
+
     .chatbot-box{
         background-color: white;
         border-radius: 50%;
