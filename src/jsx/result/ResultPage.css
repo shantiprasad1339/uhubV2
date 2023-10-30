@@ -48,10 +48,6 @@
   color: #2b92f1;
 }
 
-.result-btn {
-  padding-bottom: 20px;
-}
-
 .result-top-filters {
   /* padding: 20px; */
   padding-top: 40px;
@@ -107,17 +103,18 @@ line-height: normal;
   font-size: 1.2rem;
 }
 .ResultFilter-box{
-  width: 100%;
+  width: 200px;
   max-width: 300px;
   border-radius: 10px;
   background: #FAF8F8;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
   /* margin-left: 100px; */
-  height: 350px;
+  height: 200px;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding:5px;
   margin-bottom: 20px;
+  padding: 20px 0px 20px 10px;
+
 }
 
 .result-search{
@@ -144,14 +141,17 @@ line-height: normal;
 
 .result-checkbox-label{
   color: #000;
-font-size: 16px;
+font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 margin-left: 10px;
 
 }
-
+.radioSize{
+  height: 16px;
+  width: 16px;
+}
 .filter-content-box{
   display: flex;
   width: 100%;
@@ -476,6 +476,7 @@ flex-wrap: wrap;
     position: absolute;
     top:-3px;
     left: 20px;
+    /* width: 200px; */
 }
 }
 @media only screen and (max-width: 350.98px) {
