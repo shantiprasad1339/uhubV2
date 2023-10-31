@@ -701,3 +701,6 @@ word-break: break-all;
 :where(.ReactFlipCard__flipCardBack) {
     position: static !important;
 }
+.react-multiple-carousel__arrow--left {
+    z-index: 5;
+}

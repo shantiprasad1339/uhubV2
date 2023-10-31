@@ -23,7 +23,6 @@ function ResultPage() {
   const [hostel, setHostel] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [reduxValueGet, setReduxValue] = useState();
-
   function filterGet() {
     return axios
       .get(
@@ -39,11 +38,11 @@ function ResultPage() {
   function UniversityGet() {
     return axios
       .get(
-         ` https://hammerhead-app-p3s8r.ondigitalocean.app/university/search?search=${strValue}`
+        ` https://hammerhead-app-p3s8r.ondigitalocean.app/university/search?search=${strValue}`
       )
       .then((res) => {
         console.log(res);
-        // setFiltered(res);
+        setFiltered(res.data.data);
       });
   }
   const reduxValue = useSelector((state) => state);
@@ -55,21 +54,28 @@ function ResultPage() {
     filters.degree,
     filters.hostel && filters.hostel,
     filters.institute,
-  ].filter(Boolean); 
-  
+  ].filter(Boolean);
+
   const strValue = filteredValues.join(",");
+  const NewArray = filteredValues.join(" ");
+  const newArray = [];
+  newArray.push(NewArray);
   
+
+
   useEffect(() => {
     filterGet();
     UniversityGet();
+    
   }, [strValue]);
-  // console.log(strValue);
+  console.log(newArray);
+  const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
 
   return (
     <>
       <Navbar />
       <ResultTopBox />
-      <ResultTopHeading />
+      <ResultTopHeading filteredArray={newArray} />
       <div className="filter-content-box">
         <div>
           <p onClick={handleShow} className="hideBox2">
@@ -82,20 +88,19 @@ function ResultPage() {
 
         {!show && (
           <div className="result-filter-side-box">
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultDownBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultDownBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultSideBox />
-            <ResultSideBox />
+            {filtered &&
+              filtered.map((item, index) => {
+                return (
+                  <>
+                    <ResultSideBox
+                      image={url + item.image}
+                      title={item.name}
+                      secondDesc={item.SecondDescription}
+                      thirdDesc={item.ThirdDescription}
+                    />
+                  </>
+                );
+              })}
             <div>
               <h2 style={{ paddingTop: "50px" }}>
                 Commerce and Banking Related News
@@ -146,22 +151,29 @@ function ResultTopBox() {
   );
 }
 
-function ResultTopHeading() {
+function ResultTopHeading(props) {
+  console.log(props.filteredArray);
+
   return (
     <>
       <div className="result-top-filters">
         <p className="result-degree"></p>
         <div className="filterNames">
           <p className="result-applied">Applied Filter</p>
-          <p className="result-b-com">
-            B.Com. <ClearRoundedIcon />
-          </p>
-          <p className="result-b-com">
-            M.Com. <ClearRoundedIcon />
-          </p>
-          {/* <p className="Search-filter ">
-            Search Filter <SearchRoundedIcon />
-          </p> */}
+          {props.filteredArray &&
+            props.filteredArray.map((item, index) => {
+              console.log(item);
+              return (
+                <>
+                  <p className="result-b-com" key={index}>
+                    {item} <ClearRoundedIcon />
+                  </p>
+                 
+                </>
+              );
+            })}
+            
+                 
         </div>
       </div>
     </>
@@ -171,8 +183,94 @@ function ResultTopHeading() {
 function ResultFilter({ type, show, name }) {
   const selectedInstitute = useSelector((state) => state.filters.institute);
   const dispatch = useDispatch();
+
+  const [localSelected, setLocalSelected] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const value = event.target.value;
+
+    if (localSelected.includes(value)) {
+      const updatedLocalSelected = localSelected.filter(
+        (item) => item !== value
+      );
+      setLocalSelected(updatedLocalSelected);
+    } else {
+      const updatedLocalSelected = [...localSelected, value];
+      setLocalSelected(updatedLocalSelected);
+    }
+  };
+
+  const applyChanges = () => {
+    dispatch(setInstitute(localSelected));
+  };
+
   return (
     <>
+      <div className="hideBox">
+        <p style={{ fontSize: "22px" }}>{name}</p>
+        <div className="ResultFilter-box">
+          <form action="">
+            <br />
+            {type &&
+              type.map((item, index) => (
+                <div key={index}>
+                  <input
+                    type="checkbox"
+                    name="checkboxGroup"
+                    value={item.name}
+                    checked={localSelected.includes(item.name)}
+                    onChange={handleCheckboxChange}
+                    className="checkboxSize"
+                  />
+                  <label
+                    htmlFor={item.name}
+                    className="result-checkbox-label"
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {item.name}
+                  </label>
+                </div>
+              ))}
+            <div>
+              <input
+                type="checkbox"
+                name="checkboxGroup"
+                value="Private"
+                checked={localSelected.includes("Private")}
+                onChange={handleCheckboxChange}
+                className="checkboxSize"
+              />
+              <label
+                htmlFor={"Private"}
+                className="result-checkbox-label"
+                style={{ textTransform: "uppercase" }}
+              >
+                Private
+              </label>
+            </div>
+
+            <input
+              type="checkbox"
+              name="checkboxGroup"
+              value={"Semi Govt."}
+              checked={localSelected.includes("Semi Govt.")}
+              onChange={handleCheckboxChange}
+              className="checkboxSize"
+            />
+            <label
+              htmlFor={"Semi Govt."}
+              className="result-checkbox-label"
+              style={{ textTransform: "uppercase" }}
+            >
+              {"Semi Govt."}
+            </label>
+          </form>
+          <button onClick={applyChanges} className="ApplyButton">
+            Apply Changes
+          </button>
+        </div>
+      </div>
+
       {/* {props.show && <><p style={{ fontSize: "22px" }}>DEGEREE</p>
       <div className="ResultFilter-box">
         <fom action="">
@@ -204,171 +302,157 @@ function ResultFilter({ type, show, name }) {
           <RadioBtn name={"B.com"} />
         </fom>
       </div></>} */}
-      <div className="hideBox">
-        <p style={{ fontSize: "22px" }}>{name}</p>
-        <div className="ResultFilter-box">
-          <form action="">
-            {/* <input
-              type="search"
-              id="gsearch"
-              name="gsearch"
-              placeholder=" Search"
-              className="result-search"
-            /> */}
-            <br />
-            {type &&
-              type.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <input
-                      type="radio"
-                      name="radioGroup"
-                      value={item.name}
-                      checked={selectedInstitute === item.name}
-                      onChange={() => dispatch(setInstitute(item.name))}
-                      className="radioSize"
-                    />
-                    <label htmlFor="" className="result-checkbox-label">
-                      {item.name}
-                    </label>
-                  </div>
-                );
-              })}
-          </form>
-        </div>
-      </div>
     </>
   );
 }
 
 function ResultFilter2({ type, show, name }) {
-  const [selectedValue, setSelectedValue] = useState("");
-
-  const handleRadioChange = () => {
-    const selectedRadioValue = selectedValue;
-  };
-  const selectedDegree = useSelector((state) => state.filters.institute);
+  const selectedInstitute = useSelector((state) => state.filters.institute);
   const dispatch = useDispatch();
+
+  const [localSelected, setLocalSelected] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const value = event.target.value;
+
+    if (localSelected.includes(value)) {
+      const updatedLocalSelected = localSelected.filter(
+        (item) => item !== value
+      );
+      setLocalSelected(updatedLocalSelected);
+    } else {
+      const updatedLocalSelected = [...localSelected, value];
+      setLocalSelected(updatedLocalSelected);
+    }
+  };
+
+  const applyChanges = () => {
+    dispatch(setInstitute(localSelected));
+  };
+
   return (
     <>
       <div className="hideBox">
-        <p style={{ fontSize: "22px" }}>{name}</p>
         <div className="ResultFilter-box">
-          <fom action="">
-            {/* <input
-              type="search"
-              id="gsearch"
-              name="gsearch"
-              placeholder=" Search"
-              className="result-search"
-            /> */}
+          <form action="">
             <br />
             {type &&
-              type.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <div style={{ marginTop: "10px" }}>
-                      <input
-                        type="radio"
-                        name="radioGroup"
-                        value={item.name}
-                        onChange={() => dispatch(setDegree(item))}
-                        className="radioSize"
-                      />
-                      <label htmlFor="" className="result-checkbox-label">
-                        {item}
-                      </label>
-                    </div>
-                  </div>
-                );
-              })}
-          </fom>
+              type.map((item, index) => (
+                <div key={index}>
+                  <input
+                    type="checkbox"
+                    name="checkboxGroup"
+                    value={item}
+                    checked={localSelected.includes(item)}
+                    onChange={handleCheckboxChange}
+                    className="checkboxSize"
+                  />
+                  <label
+                    htmlFor={item}
+                    className="result-checkbox-label"
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {item}
+                  </label>
+                </div>
+              ))}
+          </form>
+          <button onClick={applyChanges} className="ApplyButton">
+            Apply Changes
+          </button>
         </div>
       </div>
     </>
   );
 }
 function ResultFilter3({ type, show, name }) {
-  const [selectHostel, setSelecthostel] = useState("");
-  const handleRadioChange = () => {
-    const selectedRadioValue = selectHostel;
-  };
-  const selectedDegree = useSelector((state) => state);
+  const selectedInstitute = useSelector((state) => state.filters.institute);
   const dispatch = useDispatch();
+
+  const [localSelected, setLocalSelected] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const value = event.target.value;
+
+    if (localSelected.includes(value)) {
+      const updatedLocalSelected = localSelected.filter(
+        (item) => item !== value
+      );
+      setLocalSelected(updatedLocalSelected);
+    } else {
+      const updatedLocalSelected = [...localSelected, value];
+      setLocalSelected(updatedLocalSelected);
+    }
+  };
+
+  const applyChanges = () => {
+    dispatch(setInstitute(localSelected));
+  };
   return (
     <>
       <div className="hideBox">
         <p style={{ fontSize: "22px" }}>{name}</p>
         <div className="ResultFilter-box">
-          <fom action="">
-            {/* <input
-              type="search"
-              id="gsearch"
-              name="gsearch"
-              placeholder=" Search"
-              className="result-search"
-            /> */}
+          <form action="">
             <br />
             {type &&
-              type.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <input
-                      type="radio"
-                      name="radioGroup"
-                      value={item.name}
-                      onChange={() => dispatch(setHostel(item.name))}
-                      className="radioSize"
-                    />
-                    <label htmlFor="" className="result-checkbox-label">
-                      {item.name}
-                    </label>
-                  </div>
-                );
-              })}
+              type.map((item, index) => (
+                <div key={index}>
+                  <input
+                    type="checkbox"
+                    name="checkboxGroup"
+                    value={item.name}
+                    checked={localSelected.includes(item.name)}
+                    onChange={handleCheckboxChange}
+                    className="checkboxSize"
+                  />
+                  <label
+                    htmlFor={item.name}
+                    className="result-checkbox-label"
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {item.name}
+                  </label>
+                </div>
+              ))}
+
             <input
-              type="radio"
-              name="radioGroup"
-              value="Boys"
-              onChange={() => dispatch(setHostel("Boys"))}
-              className="radioSize"
+              type="checkbox"
+              name="checkboxGroup"
+              value={"Boys"}
+              checked={localSelected.includes("Boys")}
+              onChange={handleCheckboxChange}
+              className="checkboxSize"
             />
-            <label htmlFor="" className="result-checkbox-label">
+            <label
+              htmlFor={"Boys"}
+              className="result-checkbox-label"
+              style={{ textTransform: "uppercase" }}
+            >
               Boys
             </label>
-
-            <br />
-            <input
-              type="radio"
-              name="radioGroup"
-              value="co-ed  "
-              onChange={() => dispatch(setHostel("Co-Ed"))}
-              className="radioSize"
-            />
-            <label htmlFor="" className="result-checkbox-label">
-              Co-Ed
-            </label>
-          </fom>
+          </form>
+          <button onClick={applyChanges} className="ApplyButton">
+            Apply Changes
+          </button>
         </div>
       </div>
     </>
   );
 }
 
-function ResultSideBox() {
+function ResultSideBox(props) {
   return (
     <>
       <div className="side-result-box">
         <div style={{ display: "flex" }}>
           <div className="side-result-box-img">
-            <img src={img3} alt="" />
+            <img src={props.image} alt="" />
           </div>
           <div className="side-result-box-content">
-            <p className="side-result-box-content-p1">UNIVERSITY OF HALL</p>
-            <address>Approved by: NAAC Type: Private</address>
-            <p className="side-result-box-content-p2">
-              SRCC Hull Fee Structure
-            </p>
+            <p className="side-result-box-content-p1">{props.title}</p>
+            <address>{props.secondDesc}</address>
+            <p className="side-result-box-content-p2">{props.thirdDesc}</p>
           </div>
         </div>
         <div className="side-result-box-button">
