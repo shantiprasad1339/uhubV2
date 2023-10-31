@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ResultPage.css";
-import { NavLink } from "react-router-dom";
+import { NavLink , useNavigate} from "react-router-dom";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import img3 from "../../../public/Images/cardImg.jpeg";
@@ -23,6 +23,7 @@ function ResultPage() {
   const [hostel, setHostel] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [reduxValueGet, setReduxValue] = useState();
+  const navigate = useNavigate()
   function filterGet() {
     return axios
       .get(
@@ -70,6 +71,7 @@ function ResultPage() {
   // console.log(newArray);
   const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
 
+
   return (
     <>
       <Navbar />
@@ -89,14 +91,16 @@ function ResultPage() {
           <div className="result-filter-side-box">
             {filtered &&
               filtered.map((item, index) => {
+                // console.log(item);
                 return (
                   <>
-                  <div key={index}>
+                  <div key={index} >
                     <ResultSideBox
                       image={url + item.image}
                       title={item.name}
                       secondDesc={item.SecondDescription}
                       thirdDesc={item.ThirdDescription}
+                      address={item.address}
                     />
                     </div>
                   </>
@@ -437,6 +441,23 @@ function ResultFilter3({ type, show, name }) {
             >
               Boys
             </label>
+            <div>
+            <input
+              type="checkbox"
+              name="checkboxGroup"
+              value={"Co-ed"}
+              checked={localSelected.includes("Co-ed")}
+              onChange={handleCheckboxChange}
+              className="checkboxSize"
+            />
+            <label
+              htmlFor={"Co-ed"}
+              className="result-checkbox-label"
+              style={{ textTransform: "uppercase" }}
+            >
+              Co-ed
+            </label>
+            </div>
           </form>
           <button onClick={applyChanges} className="ApplyButton">
             Apply Changes
@@ -448,9 +469,18 @@ function ResultFilter3({ type, show, name }) {
 }
 
 function ResultSideBox(props) {
+  const navigate = useNavigate()
+  function directTo(){
+    localStorage.setItem("uniCardImg", props.image);
+    localStorage.setItem("uniCardText", props.title);
+    localStorage.setItem("uniCardAddress", props.address);
+    navigate("/collegeDetails");
+    window.location.reload();
+  }
+  console.log(props);
   return (
     <>
-      <div className="side-result-box">
+      <div className="side-result-box" onClick={directTo}>
         <div style={{ display: "flex" }}>
           <div className="side-result-box-img">
             <img src={props.image} alt="" />

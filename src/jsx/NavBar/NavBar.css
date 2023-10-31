@@ -22,7 +22,9 @@ dropdown-menu.show {
     height: auto !important;
   
 }
-
+.inputDiv{
+    height: 35px;
+}
 .nav {
     background-color: rgb(95, 95, 220);
     display: flex;
@@ -275,6 +277,12 @@ text-primary{
     border-radius: 0px 5px 5px 0px;
 }
 
+.css-vubbuv {
+    height: 30px !important;
+    margin-bottom: 3px !important;
+    width: 55px !important;
+    border-radius: 0px 8px 8px 0px;
+}
 
 
 /* Media query for tablet-sized screens */

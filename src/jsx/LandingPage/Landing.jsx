@@ -229,7 +229,7 @@ function Card(props) {
   const { image, university } = props;
   return (
     <>
-      <div className="card">
+      <div className="firstcard">
         <div className="cardImg">
           <img src={image} alt="" />
         </div>

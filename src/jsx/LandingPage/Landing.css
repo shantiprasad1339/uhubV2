@@ -21,7 +21,7 @@ a {
     padding-bottom: 30px;
 }
 
-.card {
+.firstcard {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ a {
     font-size: 10px;
 }
 
-.card:hover {
+.firstcard:hover {
     animation: crescendo 1.1s alternate infinite ease-in-out;
 }
 
@@ -441,7 +441,7 @@ word-break: break-all;
     }
 }
 
-.card {
+.firstcard {
     width: 60%;
     max-width: 220px;
     height: auto;
@@ -472,7 +472,7 @@ word-break: break-all;
 
 @media (max-width: 780px) {
 
-    .card {
+    .firstcard {
         width: 70%;
         max-width: none;
         height: 250px;
@@ -625,7 +625,7 @@ word-break: break-all;
     .UniversityCard {
         width: 190px;
     }
-    .card {
+    .firstcard {
         width: 200px !important;
         height: 210px !important;
     }

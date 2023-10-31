@@ -1,4 +1,4 @@
-import React, { useNavigate, useState } from "react";
+import React, {  useState } from "react";
 import "./NavBar.css";
 import NavLogo from "../../../public/Images/NavBarLogo.png";
 import Whatsapp from "../../../public/Images/WhatsApp.png";
@@ -6,7 +6,7 @@ import messanger from "../../../public/Images/Facebook Messenger.png";
 import trending from "../../../public/Images/Rectangle 10.png";
 import SearchIcon from "@mui/icons-material/Search";
 import DropdownBtn from "../DropDownButton/DropDownButton";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import SignUp from "../SignUp/sing-up";
 import Login from "./../login/login";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -18,6 +18,12 @@ function Navbar() {
   const ToggleSidebar = () => {
     isOpen === true ? setIsopen(false) : setIsopen(true);
   };
+  const navigate = useNavigate()
+
+  function searchFn(){
+    navigate('/ResultPage')
+    alert('worked')
+  }
   return (
     <>
       <div className="nav">
@@ -29,17 +35,22 @@ function Navbar() {
           </div>
           <div className="navsearch">
             <div className="navInput">
+            <NavLink to="/ResultPage">
               <div
                 className="inputDiv"
-                // style={{ padding: "2px", borderRadius: "5px" }}
+                style={{ padding: "2px", borderRadius: "5px" }}
+                
+               
               >
                 <input
                   type="text"
                   className="navIn"
                   placeholder="Seacrh University"
+                  onChange={searchFn}
                 />
                 <SearchIcon className="searchIcon" />
               </div>
+              </NavLink>
               <marquee behavior="" direction="">
                 {" "}
                 Simply dummy text of the printing and typesetting.
