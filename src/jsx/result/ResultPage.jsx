@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Footer from "../footer/footer";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { setInstitute, setDegree, setHostel } from "../Redux/PostSlice";
+import { setInstitute } from "../Redux/PostSlice";
 
 function ResultPage() {
   const [show, setShow] = useState(false);
@@ -51,22 +51,21 @@ function ResultPage() {
   const filters = reduxValue.filters;
 
   const filteredValues = [
-    filters.degree,
-    filters.hostel && filters.hostel,
+    
     filters.institute,
   ].filter(Boolean);
 
   const strValue = filteredValues.join(",");
   const NewArray = filteredValues.join(" ");
-  const newArray = [];
-  newArray.push(NewArray);
-  
+  const newArray = strValue.split(',');
+  // const newArray = [];
+  // newArray.push(newArray);
 
+  console.log(strValue);
 
   useEffect(() => {
     filterGet();
     UniversityGet();
-    
   }, [strValue]);
   console.log(newArray);
   const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
@@ -152,8 +151,16 @@ function ResultTopBox() {
 }
 
 function ResultTopHeading(props) {
-  console.log(props.filteredArray);
-
+  // console.log(props.filteredArray);
+  const selectedInstitute = useSelector((state) => state.filters.institute);
+  const dispatch = useDispatch();
+  function filterNameRemove(val) {
+    let NewFiltersArray = props.filteredArray;
+    NewFiltersArray = NewFiltersArray.filter(item => item !== val);
+    // Now, NewFiltersArray contains the filtered values without 'val'
+    console.log(NewFiltersArray);  
+    dispatch(setInstitute(NewFiltersArray));
+  }
   return (
     <>
       <div className="result-top-filters">
@@ -165,15 +172,12 @@ function ResultTopHeading(props) {
               console.log(item);
               return (
                 <>
-                  <p className="result-b-com" key={index}>
-                    {item} <ClearRoundedIcon />
+                  <p className="result-b-com" key={index} onClick={()=>{filterNameRemove(item)}}>
+                    {item} <ClearRoundedIcon  />
                   </p>
-                 
                 </>
               );
             })}
-            
-                 
         </div>
       </div>
     </>
@@ -307,7 +311,7 @@ function ResultFilter({ type, show, name }) {
 }
 
 function ResultFilter2({ type, show, name }) {
-  const selectedInstitute = useSelector((state) => state.filters.institute);
+  const selectedInstitute = useSelector((state) => state.filters.setInstitute);
   const dispatch = useDispatch();
 
   const [localSelected, setLocalSelected] = useState([]);
@@ -366,7 +370,7 @@ function ResultFilter2({ type, show, name }) {
   );
 }
 function ResultFilter3({ type, show, name }) {
-  const selectedInstitute = useSelector((state) => state.filters.institute);
+  const selectedInstitute = useSelector((state) => state.filters.setInstitute);
   const dispatch = useDispatch();
 
   const [localSelected, setLocalSelected] = useState([]);
