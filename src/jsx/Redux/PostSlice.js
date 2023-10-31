@@ -1,26 +1,22 @@
 // filtersSlice.js
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 const filtersSlice = createSlice({
-  name: "filters",
-  initialState: {
-    institute: "",
-    degree: "",
-    hostel: "",
-  },
-  reducers: {
-    setInstitute: (state, action) => {
-      state.institute = action.payload;
+    name: "filters",
+    initialState: {
+        institute: [], // Change to an array
     },
-    setDegree: (state, action) => {
-      state.degree = action.payload;
-    },
-    setHostel: (state, action) => {
-      state.hostel = action.payload;
-    },
-  },
+    reducers: {
+        setInstitute: (state, action) => {
+            state.institute.push(action.payload);
+
+        },
+        removeInstitute: (state, action) => {
+          state.institute=action.payload
+        }
+    }
 });
 
-export const { setInstitute, setDegree, setHostel } = filtersSlice.actions;
+export const {setInstitute, removeInstitute} = filtersSlice.actions;
 
 export default filtersSlice.reducer;
