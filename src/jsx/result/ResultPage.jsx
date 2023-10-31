@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Footer from "../footer/footer";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { setInstitute } from "../Redux/PostSlice";
+import { removeInstitute, setInstitute } from "../Redux/PostSlice";
 
 function ResultPage() {
   const [show, setShow] = useState(false);
@@ -41,7 +41,7 @@ function ResultPage() {
         ` https://hammerhead-app-p3s8r.ondigitalocean.app/university/search?search=${strValue}`
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setFiltered(res.data.data);
       });
   }
@@ -61,13 +61,13 @@ function ResultPage() {
   // const newArray = [];
   // newArray.push(newArray);
 
-  console.log(strValue);
+  // console.log(strValue);
 
   useEffect(() => {
     filterGet();
     UniversityGet();
   }, [strValue]);
-  console.log(newArray);
+  // console.log(newArray);
   const url = "https://hammerhead-app-p3s8r.ondigitalocean.app/";
 
   return (
@@ -91,12 +91,14 @@ function ResultPage() {
               filtered.map((item, index) => {
                 return (
                   <>
+                  <div key={index}>
                     <ResultSideBox
                       image={url + item.image}
                       title={item.name}
                       secondDesc={item.SecondDescription}
                       thirdDesc={item.ThirdDescription}
                     />
+                    </div>
                   </>
                 );
               })}
@@ -158,8 +160,8 @@ function ResultTopHeading(props) {
     let NewFiltersArray = props.filteredArray;
     NewFiltersArray = NewFiltersArray.filter(item => item !== val);
     // Now, NewFiltersArray contains the filtered values without 'val'
-    console.log(NewFiltersArray);  
-    dispatch(setInstitute(NewFiltersArray));
+    // console.log(NewFiltersArray);  /
+    dispatch(removeInstitute(NewFiltersArray));
   }
   return (
     <>
@@ -169,7 +171,7 @@ function ResultTopHeading(props) {
           <p className="result-applied">Applied Filter</p>
           {props.filteredArray &&
             props.filteredArray.map((item, index) => {
-              console.log(item);
+              // console.log(item);
               return (
                 <>
                   <p className="result-b-com" key={index} onClick={()=>{filterNameRemove(item)}}>
