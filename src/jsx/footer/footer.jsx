@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Whtasapp from '../../assets/images/whatsapp.png';
 import chatbot from '../../assets/images/chatbot.png';
 import Button from 'react-bootstrap/Button';
+import ResultPage from '../result/ResultPage'
 
 
 import Modal from 'react-bootstrap/Modal';
@@ -50,7 +51,7 @@ const FooterInfoBox = () => {
           <div className="col-md-4 mt-5">
             <h5 className="footer-heading">MBA</h5>
             <ul className="footer-dtl-list">
-            <NavLink to="/" className="text-decoration-none footer-list"><li className="mt-2">Top MBA Colleges</li></NavLink>
+            <NavLink to="/ResultPage" className="text-decoration-none footer-list"><li className="mt-2">Top MBA Colleges</li></NavLink>
             <NavLink to="/" className="text-decoration-none footer-list"><li className="mt-2">MBA Colleges</li></NavLink>
                <NavLink to="/" className="text-decoration-none footer-list"><li className="mt-2">Executive MBA Colleges</li></NavLink>
                <NavLink to="/" className="text-decoration-none footer-list"><li className="mt-2">MBA Exams</li></NavLink>

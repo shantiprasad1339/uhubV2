@@ -211,7 +211,7 @@ function UnviversityTable() {
               </p>
               <p>
                 Powerd by University of Hull{" "}
-                <button className="ApplyButton">Apply</button>
+                <button className="ApplyButton1">Apply</button>
               </p>
               <div className="line"></div>
               <p>
@@ -219,7 +219,7 @@ function UnviversityTable() {
               </p>
               <p>
                 Powerd by University of Hull{" "}
-                <button className="ApplyButton">Apply</button>
+                <button className="ApplyButton1">Apply</button>
               </p>
             </div>
           </div>
